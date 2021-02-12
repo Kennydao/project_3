@@ -1,6 +1,6 @@
 anyio==2.0.2
 argon2-cffi==20.1.0
-astor @ file:///home/conda/feedstock_root/build_artifacts/astor_1593610464257/work
+
 async-generator==1.10
 attrs==20.3.0
 Babel==2.9.0
