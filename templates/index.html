@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+
+		<title>Victoria - Analysis & Visualization</title>
+
+		<!-- Leaflet CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+		integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+		crossorigin=""/>
+
+		<!-- Bootstrap CSS -->
+		<!-- <link rel="stylesheet" href="../static/css/bootstrap.css"> -->
+
+		<!-- Our CSS -->
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+		<!-- Plugins CSS  -->
+		<link rel="stylesheet" type="text/css" href="../static/plugins/jquery-ui.min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+		<style>
+			.box {
+ 				min-height: 50px;
+  				padding: 5px;
+  				margin: 5px;
+  				font-weight: 800;
+  			color: #fff;
+}		</style>
+	</head>
+
+	<body class="is-preload homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+					<!-- Logo -->
+					<div id="logo">
+						<!-- src="{{url_for('static', filename='plugins/leaflet-providers.js')}}" -->
+						<h3><a href="/">Home</a></h3>
+					</div>
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+						<!-- <li class="current"><a href="index.html">Welcome</a></li> -->
+							<li>
+								<a href="#">Analysis & Visualization</a>
+								<ul>
+									<li><a href="/tab_1">Population</a></li>
+                            		<li><a href="/tab_2">Household Income</a></li>
+                            		<li><a href="/tab_3">House Price</a></li>
+                                	<!-- <li><a href="">Wind Speed</a></li> -->
+								</ul>
+							</li>
+							<!-- <li><a href="#">ML/Prediction</a>
+								<ul>
+									<li><a href="/popuPrediction">Population Growth by LGA</a></li>
+                            		<li><a href="/housePricePrediction">House Price By Suburb</a></li>
+								</ul>
+							</li> -->
+
+							<li><a href="#">Data</a>
+								<ul>
+									<li><a href="/data_1">Victoria Real Estate</a></li>
+                            		<li><a href="/data_2">Population by Suburb</a></li>
+									<li><a href="/data_3">Schools Location</a></li>
+								</ul>
+							</li>
+
+							<li><a href="#">About</a>
+								<ul>
+									<li><a href="/popuPrediction">Project information</a></li>
+                            		<li><a href="/housePricePrediction">Github Repository</a></li>
+								</ul>
+							</li>
+
+						</ul>
+					</nav>
+				</header>
+			</div>
+
+			<!-- Main -->
+			<div id="main-wrapper">
+				<div class= "container">
+					<!-- <div class="row"> -->
+
+					<!-- </div> -->
+					<div class="row">
+
+						<div id="side-bar" class="col-md-3">
+
+							<!-- <div id = 'divBedroom' class='form-group col-xs-12' > -->
+							<!-- <form method='POST' action="/prediction"> -->
+							<div id="divSelection" class="text-center col-xs-12">
+
+								<button id="prediction" class="btn btn-primary btn-block" href="#" disabled><b>Prediction</b></button>
+								<!-- <h1><b>Prediction</b></h1> -->
+							</div>
+							<div class='col-xs-6'>
+							<input type="text" id="txtSubHouse" name='subHouse' class="form-control" placeholder="Suburb Name">
+							</div>
+							<div class='col-xs-6'>
+							<input type="text" id="txtBedroom" name='bedRoom' class="form-control" placeholder="# of Bedroom">
+							</div>
+							<div class='col-xs-6'>
+							<input type="text" id="txtYearHouse" name="yearHouse" class="form-control" placeholder="Year">
+							</div>
+							<button id="btnPrediHouse" type= "submit" class="btn btn-primary btn-block" href="/housePricePrediction" >Housing Price</button>
+							<div class='col-xs-6'>
+								<input type="text" id="txtLga" name="lgaName" class="form-control" placeholder="LGA Name">
+							</div>
+							<button id="btnPopuGrowth" class="btn btn-primary btn-block" href="/popuPrediction">Population Growth</button>
+
+
+							<!-- </form> -->
+						</div>
+						<div id="map" class="col-md-9"></div>
+					</div>
+				</div>
+
+
+
+
+
+				<!--
+					<div class="row">
+						<div class="col-md-6">
+
+							<div id="content">
+								<h2>Summary: Latitute vs. X</h2>
+								<hr>
+								<a href="./Images/Fig1.png" class="image size"><img src="./Images/Fig1.png" alt="Max Temperature" /></a>
+								<p> The purpose of this project was to analyze how weather changes as you get closer to
+									the equator. To accomplish this anlysis, we first pulled data from the OpenWeatherMap API
+									to assemgle a dataset on over 500 cities.</p>
+								<p>	After assembling the dataset, we used Matplotlib to plot various aspects of the weather
+									vs. latitute. Factors we looked at included: temperature, cloudiness, wind speed, and
+									humidity. This site provides the source data and visualizations created as part of the
+									analysis, as as explanations and descriptions of any trends and correlations witnessed.</p>
+
+							</div>
+						</div>
+
+						<div class="col-md-6 col-md-5">
+							<h2>Visualizations</h2>
+							<hr>
+							<div class="row">
+								<div class="col-sm-6 col-md-5"><a href="./Images/Fig1.png"><img class="image_fit" src="./Images/Fig1.png" /></a></div>
+								<div class="col-sm-6 col-md-5"><a href="./Images/Fig2.png"><img class="image_fit" src="./Images/Fig2.png" /></a></div>
+
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-sm-6 col-md-5"><a href="./Images/Fig3.png"><img class="image_fit" src="./Images/Fig3.png" /></a></div>
+								<div class="col-sm-6 col-md-5"><a href="./Images/Fig4.png"><img class="image_fit" src="./Images/Fig4.png" /></a></div>
+							</div>
+						</div>
+					</div>
+				-->
+
+			</div>
+		</div>
+
+
+
+
+		<!-- Leaflet JavaScript -->
+		<script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+		<!-- d3 JavaScript -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<!-- JQuery JS -->
+
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+		<script src="{{url_for('static', filename='plugins/jquery-3.2.0.min.js')}}"></script>
+
+		<!-- Leaflet-Choropleth JavaScript -->
+		<script type="text/javascript" src="{{url_for('static', filename='js/choropleth.js')}}"></script>
+
+		<!-- Plugins -->
+		<script src="{{url_for('static', filename='plugins/leaflet-providers.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/leaflet.ajax.min.js')}}"></script>
+		<script type="text/javascript" src="{{url_for('static', filename='plugins/leaflet-heat.js')}}"></script>
+		<script type="text/javascript" src="{{url_for('static', filename='plugins/jquery-ui.min.js')}}"></script>
+
+
+		<!-- <script src="{{url_for('static', filename='plugins/jquery.min.js')}}"></script> -->
+		<script src="{{url_for('static', filename='plugins/jquery.dropotron.min.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/browser.min.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/breakpoints.min.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/util.js')}}"></script>
+		<script src="{{url_for('static', filename='plugins/main.js')}}"></script>
+		<!-- API key -->
+		<!-- <script type="text/javascript" src="static/js/config.js"></script> -->
+		<!-- Our JavaScript -->
+		<script type="text/javascript" src="{{url_for('static', filename='js/logic.js')}}"></script>
+
+
+		<!-- Scripts -->
+
+
+
+		<script>
+			var menu = document.getElementById("nav");
+			menu.addEventListener("change", generateData);
+
+			function generateData(event) {
+			  if (menu.value == '1') {
+				alert(1);
+			  } else if (menu.value == '2') {
+				alert(2);
+			  } else if (menu.value == '3') {
+				alert(3);
+			  }
+			}
+		</script>
+	</body>
+</html>

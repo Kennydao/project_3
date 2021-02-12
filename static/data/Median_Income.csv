@@ -1,0 +1,786 @@
+Suburb,Median Income
+Briar Hill,1604.0
+Bundoora,1363.0
+Eaglemont,2352.0
+Greensborough,1634.0
+Heidelberg,1735.0
+Heidelberg Heights,1396.0
+Heidelberg West,1009.0
+Ivanhoe,1910.0
+Ivanhoe East,2471.0
+Lower Plenty,1810.0
+Macleod,1569.0
+Montmorency,1730.0
+Rosanna,1709.0
+St Helena,2151.0
+Viewbank,1743.0
+Watsonia,1456.0
+Watsonia North,1692.0
+Yallambie,1899.0
+East Precinct,1839.0
+Mid Precinct,1663.0
+North East Precinct,1822.0
+North West Precinct,1439.0
+North Precinct,1636.0
+South Precinct,2086.0
+West Precinct,1188.0
+Bendigo,1106.0
+Eaglehawk,944.0
+East Bendigo,1056.0
+Elmore,1141.0
+Epsom,1454.0
+Flora Hill,1177.0
+Golden Square,1116.0
+Heathcote and District,815.0
+Huntly,1488.0
+Kangaroo Flat,1014.0
+Kennington,1098.0
+Long Gully,919.0
+Maiden Gully,1829.0
+Marong,1458.0
+North Bendigo,957.0
+Rural East,1691.0
+Strathdale,1227.0
+Strathfieldsaye,1871.0
+White Hills,1176.0
+Urban Bendigo,1158.0
+Rural Bendigo,1297.0
+Study Area,1259.0
+City of Greater Bendigo,1182.0
+Regional VIC,1124.0
+Ashburton,2192.0
+Balwyn,1730.0
+Balwyn North,2015.0
+Camberwell,2230.0
+Canterbury,2366.0
+Deepdene,1913.0
+Glen Iris,2482.0
+Hawthorn,1818.0
+Hawthorn East,1954.0
+Kew,2214.0
+Kew East,2134.0
+Surrey Hills,2311.0
+Bellevue Ward,2108.0
+Cotham Ward,2127.0
+Gardiner Ward,2430.0
+Glenferrie Ward,1792.0
+Junction Ward,1908.0
+Lynden Ward,2283.0
+Maling Ward,2267.0
+Maranoa Ward,1826.0
+Riversdale Ward,1928.0
+Solway Ward,2291.0
+Studley Ward,2141.0
+Alfredton,1523.0
+Ballarat Central,1312.0
+Ballarat East,990.0
+Ballarat North,1209.0
+Buninyong,1597.0
+Cardigan Village,1566.0
+Delacombe,1242.0
+Golden Point,1121.0
+Lake Wendouree,1384.0
+Lucas,1927.0
+Miners Rest,1517.0
+Mount Clear,1432.0
+Rural East,1901.0
+Rural West,1062.0
+Sebastopol,832.0
+Soldiers Hill,1202.0
+Wendouree,825.0
+City of Ballarat,1158.0
+Abbotsford,2019.0
+Central Richmond,2206.0
+Clifton Hill,2230.0
+Collingwood,1696.0
+Cremorne and Burnley,2380.0
+Fairfield,2047.0
+Fitzroy,1732.0
+Fitzroy North,1913.0
+Carlton North,1991.0
+North Richmond,1645.0
+Amcor Study Area,2093.0
+Swan Street Structure Plan,2281.0
+Johnston Street Structure Plan,1437.0
+City of Yarra,1949.0
+Colac,871.0
+Colac,1038.0
+Colac,1002.0
+Elliminyt,1476.0
+Great Ocean Road,927.0
+Rural North,1181.0
+Rural South,1090.0
+Colac,1053.0
+Colac Otway Shire,1056.0
+Regional VIC,1124.0
+Alphington,2224.0
+Bundoora,1593.0
+Fairfield,1670.0
+Kingsbury,1127.0
+Northcote,1843.0
+Northcote,1938.0
+Preston,1332.0
+Preston,1500.0
+Reservoir,1159.0
+Reservoir,1331.0
+Reservoir,1127.0
+Reservoir,1083.0
+Thornbury,1474.0
+Thornbury,1641.0
+Fairfield,1818.0
+Kingsbury,1360.0
+Northcote,1879.0
+Preston,1416.0
+Reservoir,1180.0
+Thornbury,1546.0
+Northcote Activity Area,1876.0
+Northland Activity Area,937.0
+Preston Activity Area,1342.0
+Reservoir Activity Area,1204.0
+City of Darebin,1420.0
+Bairnsdale,998.0
+Bruthen,1002.0
+Buchan,720.0
+Cann River,756.0
+Lakes Entrance,860.0
+Lindenow,1237.0
+Mallacoota,771.0
+Metung,1013.0
+Omeo,927.0
+Orbost,760.0
+Paynesville,894.0
+Twin Rivers,1027.0
+Bairnsdale urban area,965.0
+Lakes Entrance,790.0
+Orbost,709.0
+East Gippsland Shire,938.0
+City of Knox,1558.0
+City of Manningham,1637.0
+City of Maroondah,1541.0
+City of Monash,1508.0
+City of Whitehorse,1502.0
+Yarra Ranges Council area,1497.0
+Carrum Downs,1334.0
+Frankston Central,955.0
+Frankston Heights,1221.0
+Frankston North,884.0
+Frankston South,1611.0
+Karingal,1124.0
+Langwarrin,1576.0
+Langwarrin South,2087.0
+Sandhurst,2326.0
+Seaford,1208.0
+Skye,1658.0
+Carrum Downs,1506.0
+Frankston Central,1095.0
+Frankston North,887.0
+Frankston South,1611.0
+Karingal,1124.0
+Langwarrin,1596.0
+Seaford,1208.0
+Frankston Metropolitan Activity Centre,819.0
+Frankston City,1327.0
+Armstrong Creek,1924.0
+Barwon Heads,1747.0
+Bell Park,1028.0
+Bell Post Hill,1076.0
+Belmont,1143.0
+Clifton Springs,1127.0
+Corio,913.0
+Curlewis,1548.0
+Drysdale,1133.0
+East Geelong,1437.0
+Geelong,1455.0
+Geelong West,1384.0
+Grovedale,1221.0
+Hamlyn Heights,1232.0
+Herne Hill,1084.0
+Highton,1663.0
+Lara,1559.0
+Leopold,1353.0
+Lovely Banks,1489.0
+Marshall,1109.0
+Newcomb,942.0
+Newtown,1677.0
+Norlane,737.0
+North Geelong,1187.0
+Ocean Grove,1432.0
+Portarlington,897.0
+Rural Bellarine Peninsula,1493.0
+Rural North,1389.0
+South Geelong,989.0
+St Albans Park,1123.0
+St Leonards,903.0
+Waurn Ponds,1901.0
+Whittington,797.0
+Central Geelong,1368.0
+City of Greater Geelong,1242.0
+Greater Melbourne,1539.0
+Bairnsdale,998.0
+Bruthen,1002.0
+Buchan,720.0
+Cann River,756.0
+Lakes Entrance,860.0
+Lindenow,1237.0
+Mallacoota,771.0
+Metung,1013.0
+Omeo,927.0
+Orbost,760.0
+Paynesville,894.0
+Twin Rivers,1027.0
+Bairnsdale urban area,965.0
+Lakes Entrance,790.0
+Orbost,709.0
+East Gippsland Shire,938.0
+Bentleigh,1773.0
+Bentleigh East,1727.0
+Carnegie,1481.0
+Caulfield,1785.0
+Caulfield North,1944.0
+Caulfield South,1981.0
+Elsternwick,1868.0
+Glen Huntly,1541.0
+McKinnon,2009.0
+Murrumbeena,1628.0
+Ormond,1567.0
+St Kilda East,1899.0
+Camden Ward,1908.0
+Rosstown Ward,1595.0
+Tucker Ward,1756.0
+Coleraine,931.0
+Hamilton,1043.0
+Hamilton,991.0
+Hamilton,1012.0
+Rural East,1149.0
+Rural North,1059.0
+Hamilton,1011.0
+Southern Grampians Shire,1041.0
+Regional VIC,1124.0
+Great South Coast,1102.0
+Colac Otway Shire,1056.0
+Corangamite Shire,1042.0
+Glenelg Shire,1045.0
+Altona,1451.0
+Altona Meadows,1381.0
+Altona North,1236.0
+Brooklyn,1430.0
+Laverton,1202.0
+Newport East,2386.0
+Newport West,2081.0
+Seabrook,1650.0
+Spotswood,1840.0
+Williamstown,1966.0
+Williamstown North,2055.0
+Newport,2172.0
+Hobsons Bay City,1564.0
+Airport,1849.0
+Attwood,1880.0
+Broadmeadows,902.0
+Campbellfield,933.0
+Coolaroo,899.0
+Craigieburn,1501.0
+Dallas,922.0
+Gladstone Park,1254.0
+Greenvale,2027.0
+Jacana,1028.0
+Meadow Heights,1047.0
+Roxburgh Park,1357.0
+Sunbury,1572.0
+Tullamarine,1182.0
+Westmeadows,1370.0
+Aspendale,1911.0
+Aspendale Gardens,1947.0
+Bonbeach,1430.0
+Carrum,1372.0
+Chelsea,1318.0
+Chelsea Heights,1534.0
+Cheltenham,1475.0
+Clarinda,1374.0
+Clayton South,1255.0
+Dingley Village,1584.0
+Edithvale,1627.0
+Heatherton,1857.0
+Highett,1486.0
+Mentone,1497.0
+Moorabbin,1518.0
+Mordialloc,1673.0
+Oakleigh South,1430.0
+Parkdale,1719.0
+Patterson Lakes,1656.0
+Waterways,2433.0
+Aspendale,1880.0
+Chelsea,1406.0
+Cheltenham Planning area,1475.0
+Clarinda,1395.0
+Clayton South Planning area,1255.0
+Dingley Village,1642.0
+Mentone,1553.0
+Moorabbin,1503.0
+Mordialloc Planning area,1723.0
+Patterson Lakes,1538.0
+Chelsea Activity Centre,1352.0
+Cheltenham Activity Centre,1579.0
+Clayton South,1273.0
+Highett Activity Centre,1370.0
+Mentone East Activity Centre,1410.0
+Mentone West Activity Centre,1367.0
+Moorabbin Activity Centre,1324.0
+Mordialloc Activity Centre,1470.0
+Southland Activity Centre,1407.0
+Blue,1591.0
+Brown,1160.0
+Green,1493.0
+Yellow,1584.0
+Banksia Ward,1472.0
+Bunjil Ward,1288.0
+Caruana Ward,1495.0
+Chicquita Ward,1657.0
+Como Ward,1532.0
+Karkarook Ward,1424.0
+Longbeach Ward,1456.0
+Melaleuca Ward,1692.0
+Sandpiper Ward,1541.0
+Wattle Ward,1530.0
+Yammerbook Ward,2045.0
+City of Kingston,1533.0
+Greater Melbourne,1539.0
+South East Melbourne Group,1417.0
+Metropolitan Transport Forum,1558.0
+Bayswater,1295.0
+Boronia,1313.0
+Ferntree Gully,1452.0
+Knoxfield,1475.0
+Lysterfield,2332.0
+Rowville,1766.0
+Rowville,1909.0
+Rowville,2047.0
+Scoresby,1623.0
+The Basin,1675.0
+Upper Ferntree Gully,1569.0
+Wantirna,1574.0
+Wantirna South,1622.0
+Rowville,1888.0
+Dandenong Foothills Policy Area,1484.0
+Baird Ward,1317.0
+Chandler Ward,1409.0
+Collier Ward,1652.0
+Dinsdale Ward,1339.0
+Dobson Ward,1611.0
+Friberg Ward,1629.0
+Scott Ward,1620.0
+Taylor Ward,2037.0
+Tirhatuan Ward,1642.0
+City of Knox,1558.0
+Gisborne District,1848.0
+Kyneton District,1254.0
+Lancefield District,1421.0
+Macedon and Mount Macedon District,1995.0
+Riddells Creek District,1814.0
+Romsey District,1585.0
+Woodend District,1712.0
+Gisborne,1826.0
+Kyneton,1114.0
+Lancefield,1319.0
+Macedon,1840.0
+Mount Macedon,2185.0
+Riddells Creek,1837.0
+Romsey,1496.0
+Woodend,1511.0
+Bulleen,1495.0
+Doncaster,1365.0
+Doncaster East,1500.0
+Donvale,1771.0
+Park Orchards,2668.0
+Templestowe,1915.0
+Templestowe Lower,1586.0
+Warrandyte,2190.0
+Wonga Park,2447.0
+Doncaster Hill,1169.0
+Bolin Ward,1526.0
+Currawong Ward,1907.0
+Manna Ward,1604.0
+Ruffey Ward,1656.0
+Schramm Ward,1304.0
+Tullamore Ward,1344.0
+Waldau Ward,1526.0
+Westerfolds Ward,1928.0
+Yarra Ward,2512.0
+Donvale,1597.0
+Donvale,2576.0
+Templestowe,1892.0
+Templestowe,2250.0
+Tunstall Square area of influence,1420.0
+City of Manningham,1637.0
+Greater Melbourne,1539.0
+City of Boroondara,2078.0
+Braybrook,1063.0
+Footscray,1293.0
+Kingsville,1706.0
+Maidstone,1418.0
+Maribyrnong,1764.0
+Seddon,2017.0
+West Footscray,1428.0
+Yarraville,2001.0
+River Ward,1491.0
+Stony Creek Ward,1309.0
+Yarraville Ward,1777.0
+Central Precinct,1464.0
+East Precinct,1230.0
+North Precinct,1556.0
+South East Precinct,2034.0
+South West Precinct,1738.0
+West Precinct,1063.0
+City of Maribyrnong,1543.0
+Greater Melbourne,1539.0
+Bayswater North,1430.0
+Croydon,1342.0
+Croydon Hills,2081.0
+Croydon North,1786.0
+Croydon South,1570.0
+Heathmont,1775.0
+Kilsyth,1262.0
+Kilsyth South,1914.0
+Ringwood,1357.0
+Ringwood East,1445.0
+Ringwood North,1923.0
+Warranwood,2417.0
+Bayswater North Community Renewal Area,1414.0
+Croydon Major Activity Centre,1144.0
+Ringwood Metropolitan Activity Centre,1172.0
+City of Maroondah,1541.0
+Greater Melbourne,1539.0
+City of Knox,1558.0
+City of Manningham,1637.0
+Aintree,1405.0
+Brookfield,1447.0
+Burnside,1676.0
+Caroline Springs,1834.0
+Cobblebank,1819.0
+Diggers Rest,1385.0
+Eynesbury Township,2236.0
+Fraser Rise,2001.0
+Harkness,1517.0
+Hillside,1867.0
+Kurunjang,1365.0
+Melton,979.0
+Melton South,1014.0
+Melton West,1336.0
+Rockbank,1018.0
+Rural Balance,1625.0
+Taylors Hill,1918.0
+Toolern Vale,1433.0
+Melton East,1835.0
+Melton Township,1255.0
+City of Melton,1538.0
+Greater Melbourne,1539.0
+Broadford area,1239.0
+Kilmore,1335.0
+Puckapunyal,2034.0
+Pyalong,1288.0
+Rural North East,1357.0
+Seymour,979.0
+Wallan,1660.0
+Wandong,1532.0
+Mitchell Shire,1389.0
+Greater Melbourne,1539.0
+Interface councils,1494.0
+Ashwood,1403.0
+Chadstone,1524.0
+Clayton,1052.0
+Glen Waverley,1547.0
+Hughesdale,1690.0
+Mount Waverley,1635.0
+Mulgrave,1569.0
+Notting Hill,1137.0
+Oakleigh,1570.0
+Oakleigh East,1508.0
+Oakleigh South,1478.0
+Wheelers Hill,1668.0
+Radius from Hanover Street,1584.0
+Bacchus Marsh,1166.0
+Ballan,1291.0
+Blackwood,1464.0
+Bungaree,1344.0
+Darley,1591.0
+Dunnstown,1257.0
+Long Forest,2097.0
+Maddingley,1394.0
+Mount Wallace,1435.0
+Bacchus Marsh and Surrounds,1389.0
+Bacchus Marsh Region,1438.0
+Ballan Region,1354.0
+West Moorabool Region,1262.0
+Moorabool Shire,1387.0
+Greater Melbourne,1539.0
+Brunswick,1724.0
+Brunswick East,1747.0
+Brunswick West,1406.0
+Coburg,1605.0
+Coburg North,1469.0
+Fawkner,1080.0
+Glenroy,1258.0
+Gowanbrae,1745.0
+Hadfield,1109.0
+Oak Park,1665.0
+Pascoe Vale,1493.0
+Pascoe Vale South,1859.0
+City of Moreland,1501.0
+Balnarring,1504.0
+Baxter,1377.0
+Bittern,1324.0
+Dromana,1131.0
+Flinders,1625.0
+Hastings,942.0
+HMAS Cerberus,1931.0
+Moorooduc,1994.0
+Mornington,1197.0
+Mount Eliza,2029.0
+Mount Martha,1710.0
+Portsea,1165.0
+Red Hill,1784.0
+Rosebud,952.0
+Rye,1055.0
+Somerville,1434.0
+Tyabb,1473.0
+Beleura Hill,1561.0
+Capel Sound,784.0
+Rosebud,937.0
+Tootgarook,1032.0
+Tyabb Structure Plan,1346.0
+Green Wedge,1696.0
+Mornington Park,1108.0
+Peninsula Club Catchment,1191.0
+West Park,945.0
+Mornington Peninsula Shire,1274.0
+Albert Park,2246.0
+Balaclava,1632.0
+Elwood,1905.0
+Middle Park,2392.0
+Port Melbourne,2196.0
+Ripponlea,1494.0
+South Melbourne,1846.0
+St Kilda,1586.0
+St Kilda East,1647.0
+St Kilda Road,1971.0
+St Kilda West,1887.0
+Albert Park,2194.0
+East St Kilda,1668.0
+Elwood,1877.0
+Port Melbourne,2196.0
+South Melbourne,1793.0
+St Kilda,1601.0
+St Kilda Road,1983.0
+City of Port Phillip,1836.0
+Kialla Urban,1690.0
+Mooroopna,1004.0
+Rural East,1389.0
+Rural North,1418.0
+Rural North West,1145.0
+Rural South,1080.0
+Shepparton Central,907.0
+Shepparton North Central,1066.0
+Shepparton North East,1560.0
+Shepparton North West,1172.0
+Shepparton South,976.0
+Shepparton South East,913.0
+Shepparton Surrounds East,1429.0
+Shepparton Surrounds South,1584.0
+Tatura,1187.0
+Shepparton Urban Centre,1138.0
+City of Greater Shepparton,1160.0
+Regional VIC,1124.0
+Fish Creek,1091.0
+Foster and surrounds,817.0
+Korumburra,933.0
+Leongatha,1075.0
+Mirboo North,1121.0
+Nyora,1303.0
+Rural North East,1093.0
+Rural West,1231.0
+South West Coastal District,947.0
+Toora,868.0
+South Gippsland Shire,1041.0
+Glenrowan and District,1341.0
+Moyhu and King Valley,1022.0
+Oxley,1246.0
+Springhurst,1229.0
+Wangaratta,1014.0
+Wangaratta,843.0
+Wangaratta,1161.0
+Wangaratta,1019.0
+Dennington area,1427.0
+Rural Balance,1634.0
+Warrnambool,1167.0
+Warrnambool,985.0
+Warrnambool,928.0
+Warrnambool,1692.0
+Warrnambool,1039.0
+Warrnambool,1209.0
+Warrnambool,1182.0
+Warrnambool,987.0
+Warrnambool City,1180.0
+Regional VIC,1124.0
+Great South Coast,1102.0
+Colac Otway Shire,1056.0
+Corangamite Shire,1042.0
+Glenelg Shire,1045.0
+Boisdale,1111.0
+Coastal South District,802.0
+Gormandale,1164.0
+Heyfield,1036.0
+Loch Sport,707.0
+Longford and surrounds,1483.0
+Maffra and surrounds,1137.0
+Rosedale and surrounds,1244.0
+Sale,1169.0
+Sale rural surrounds,1429.0
+Stratford and surrounds,1182.0
+Wurruk and surrounds,1474.0
+Yarram and surrounds,890.0
+Coastal District planning area,707.0
+Heyfield and District planning area,1036.0
+Maffra and District planning area,1137.0
+Rosedale and District planning area,1204.0
+Sale and District planning area,1226.0
+Stratford and District planning area,1133.0
+Yarram and District planning area,858.0
+Wellington Shire,1104.0
+Blackburn,1790.0
+Blackburn North,1522.0
+Blackburn South,1503.0
+Box Hill,1053.0
+Box Hill North,1423.0
+Box Hill South,1485.0
+Burwood,1128.0
+Burwood East,1365.0
+Forest Hill,1341.0
+Mitcham,1642.0
+Mont Albert,2035.0
+Mont Albert North,1920.0
+Nunawading,1503.0
+Surrey Hills,2202.0
+Vermont,1660.0
+Vermont South,1669.0
+Bundoora,1276.0
+Doreen,1801.0
+Epping,1273.0
+Epping North,1600.0
+Lalor,1102.0
+Mernda,1709.0
+Mill Park,1515.0
+Rural Balance,1711.0
+South Morang,1678.0
+Thomastown,1020.0
+Whittlesea Township and Surrounds,1314.0
+Bundoora 1,1514.0
+Bundoora 2,1293.0
+Bundoora 3,1163.0
+Doreen 1,1833.0
+Doreen 2,1734.0
+Epping 1 & 2,1182.0
+Epping 3,1303.0
+Epping North 1,1620.0
+Epping North 2,1575.0
+Epping North 3,1610.0
+Lalor 1,1193.0
+Lalor 2,992.0
+Mernda 1,1588.0
+Mernda 2,1735.0
+Mernda 3 & 4,1918.0
+Mill Park 1,1442.0
+Mill Park 2,1950.0
+South Morang 1,1744.0
+South Morang 2,1636.0
+South Morang 3,708.0
+Thomastown 1,1003.0
+Thomastown 2,1045.0
+Green Wedge,1443.0
+Baranduda,1876.0
+Belvoir,1098.0
+Felltimber,1556.0
+Martin Park,889.0
+Melrose,1020.0
+Rural Balance,1580.0
+Wodonga Central,814.0
+Wodonga East,1139.0
+Wodonga Growth Area,1778.0
+Wodonga South,1610.0
+Wodonga West,1692.0
+Cities of Albury and Wodonga,1217.0
+City of Wodonga,1268.0
+Hoppers Crossing,1402.0
+Little River,1698.0
+Point Cook,2049.0
+Tarneit,1731.0
+Truganina,1711.0
+Werribee,1287.0
+Werribee South,1131.0
+Williams Landing,2214.0
+Wyndham Vale,1522.0
+Bellbridge,1493.0
+Cambridge,1626.0
+Kingston,1622.0
+Little River,1739.0
+Manor Lakes,1775.0
+Mossfiel,1197.0
+Mount Cottrell,1412.0
+Point Cook,2031.0
+Riverwalk,1465.0
+Sanctuary Lakes,2122.0
+Tarneit,1797.0
+Tarneit,1574.0
+The Grange,1456.0
+Truganina,1711.0
+Werribee Central,1188.0
+Werribee Central,1318.0
+Werribee South,1131.0
+Williams Landing,2214.0
+Woodville,1172.0
+Wyndham Vale,1398.0
+Wyndham Vale,1124.0
+Wyndham Central,1548.0
+Wyndham East,1975.0
+Wyndham Rural,1406.0
+Wyndham West,1376.0
+City of Wyndham,1617.0
+Belgrave,1711.0
+Belgrave Heights and Surrounds,1829.0
+Chirnside Park,1754.0
+Gruyere,1664.0
+Healesville and Surrounds,1205.0
+Hilltop Towns,1613.0
+Kallista and Surrounds,1762.0
+Kilsyth,1314.0
+Launching Place,1320.0
+Lilydale,1422.0
+Monbulk,1402.0
+Montrose,1738.0
+Mooroolbark,1594.0
+Mount Evelyn,1649.0
+Rural South and East,1466.0
+Seville,1579.0
+Upwey and Surrounds,1746.0
+Wandin and Surrounds,1615.0
+Warburton and Surrounds,942.0
+Yarra Glen and Surrounds,1586.0
+Yarra Junction,1046.0
+Central Yarra,1456.0
+The Dandenongs,1546.0
+The Foothills,1683.0
+The Hills,1757.0
+The Urban Area,1512.0
+Upper Yarra,1019.0
+Yarra Valley,1350.0
+Hills,1685.0
+Urban Area,1547.0
+Valley,1291.0
+Yarra Ranges Council,1497.0
+Greater Melbourne,1539.0
+Eastern Metropolitan Region,1609.0
+Interface councils,1494.0
+Cardinia Shire,1494.0
+City of Casey,1552.0
+Hume City,1376.0
+City of Melton,1538.0
+Mornington Peninsula Shire,1274.0
+Nillumbik Shire,2093.0

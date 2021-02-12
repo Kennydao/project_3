@@ -1,0 +1,550 @@
+Region,Value
+Melbourne Inner,701634
+Brunswick Coburg,99584
+Brunswick,29993
+Brunswick East,13765
+Brunswick West,15543
+Coburg,29202
+Pascoe Vale South,11081
+Darebin South,58302
+Fairfield,10008
+Northcote,27913
+Thornbury,20381
+Essendon,74831
+Ascot Vale,16508
+Essendon Aberfeldie,30927
+Flemington,11345
+Moonee Ponds,16051
+Melbourne City,179021
+Carlton,24692
+Docklands,15701
+East Melbourne,5918
+Flemington Racecourse,91
+Kensington,12173
+Melbourne,51894
+North Melbourne,26459
+Parkville,8756
+South Yarra West,7010
+Southbank,26324
+West Melbourne,3
+Port Phillip,115586
+Albert Park,17806
+Elwood,16754
+Port Melbourne,18049
+Port Melbourne Industrial,438
+South Melbourne,13509
+St Kilda,30447
+St Kilda East,18583
+Stonnington West,72057
+Armadale,10501
+Prahran Windsor,22234
+South Yarra East,25051
+Toorak,14271
+Yarra,102253
+Abbotsford,10088
+Carlton North Princes Hill,9207
+Collingwood,10984
+Fitzroy,11903
+Fitzroy North,13929
+Richmond,35852
+Yarra North,10290
+Melbourne Inner East,397108
+Boroondara,183172
+Ashburton,8298
+Balwyn,17144
+Balwyn North,21823
+Camberwell,23164
+Glen Iris East,17713
+Hawthorn,26161
+Hawthorn East,17244
+Kew,27190
+Kew East,6977
+Surrey Hills,17458
+Manningham West,100093
+Bulleen,11832
+Doncaster,24465
+Templestowe,17765
+Templestowe Lower,14484
+Doncaster East,15749
+Doncaster East,15798
+Whitehorse West,113843
+Blackburn,23394
+Blackburn South,11498
+Box Hill,23320
+Box Hill North,19219
+Burwood,14652
+Burwood East,11086
+Surrey Hills,10674
+Melbourne Inner South,445903
+Bayside,106862
+Beaumaris,14772
+Brighton,25125
+Brighton East,16955
+Cheltenham Highett,12353
+Hampton,19344
+Sandringham,18313
+Glen Eira,164929
+Bentleigh McKinnon,25048
+Carnegie,20562
+Caulfield North,23523
+Caulfield South,18926
+Elsternwick,12671
+Hughesdale,8418
+Murrumbeena,10100
+Ormond Glen Huntly,14727
+Bentleigh East,16532
+Bentleigh East,14422
+Kingston,128401
+Aspendale Gardens Waterways,9496
+Braeside,60
+Patterson Lakes,12660
+Chelsea Bonbeach,15600
+Chelsea Heights,5621
+Cheltenham Highett,25050
+Edithvale Aspendale,14025
+Mentone,14185
+Moorabbin Heatherton,9747
+Moorabbin Airport,0
+Mordialloc Parkdale,21957
+Stonnington East,45711
+Malvern Glen Iris,21866
+Malvern East,23845
+Melbourne North East,556655
+Banyule,131700
+Bundoora East,10553
+Greensborough,21667
+Heidelberg Rosanna,16477
+Heidelberg West,15764
+Ivanhoe,12927
+Ivanhoe East,8295
+Montmorency Briar Hill,17078
+Viewbank Yallambie,19242
+Watsonia,9697
+Darebin North,105882
+Kingsbury,13254
+Reservoir East,30027
+Reservoir West,26086
+Preston East,22907
+Preston West,13608
+Nillumbik Kinglake,69181
+Eltham,24282
+Hurstbridge,3624
+Kinglake,4156
+Panton Hill St Andrews,5490
+Plenty Yarrambat,9985
+Research North Warrandyte,7055
+Wattle Glen Diamond Creek,14589
+Whittlesea Wallan,249892
+Bundoora North,8610
+Bundoora West,6708
+Lalor,25073
+Mill Park North,18708
+Mill Park South,12404
+Thomastown,21603
+Wallan,19654
+Whittlesea,8911
+Doreen,26712
+Epping East,14051
+Epping South,8767
+Epping West,13105
+Mernda,23359
+South Morang,13438
+South Morang,12716
+Wollert,16073
+Melbourne North West,419348
+Keilor,64567
+Airport West,8559
+Essendon Airport,0
+Keilor,9113
+Keilor East,28673
+Niddrie Essendon West,7748
+Strathmore,10474
+Macedon Ranges,32429
+Gisborne,14211
+Macedon,3611
+Riddells Creek,4319
+Romsey,10288
+Moreland North,85383
+Coburg North,8866
+Fawkner,15280
+Pascoe Vale,26957
+Glenroy,24986
+Gowanbrae,3129
+Hadfield,6165
+Sunbury,44193
+Sunbury,13558
+Sunbury South,30635
+Tullamarine Broadmeadows,192776
+Broadmeadows,14574
+Campbellfield Coolaroo,17205
+Gladstone Park Westmeadows,18732
+Bulla,20176
+Meadow Heights,15770
+Melbourne Airport,194
+Roxburgh Park Somerton,25060
+Tullamarine,6842
+Craigieburn Central,8840
+Craigieburn North,13337
+Craigieburn South,20617
+Craigieburn West,20202
+Mickleham,11227
+Melbourne Outer East,534485
+Knox,164510
+Bayswater,13071
+Knoxfield Scoresby,17194
+Lysterfield,7023
+Rowville Central,15920
+Rowville North,8372
+Rowville South,10966
+Wantirna,14643
+Wantirna South,18995
+Boronia,23734
+Ferntree Gully,14642
+Ferntree Gully,15478
+The Basin,4472
+Manningham East,27552
+Donvale Park Orchards,16895
+Warrandyte Wonga Park,10657
+Maroondah,118204
+Bayswater North,12517
+Croydon Hills Warranwood,18847
+Ringwood,18861
+Ringwood East,21744
+Ringwood North,10076
+Croydon East,16543
+Croydon West,14666
+Croydon South,4950
+Whitehorse East,65626
+Forest Hill,11476
+Mitcham,17527
+Nunawading,12925
+Vermont,11310
+Vermont South,12388
+Yarra Ranges,158593
+Belgrave Selby,10414
+Chirnside Park,11383
+Healesville,14638
+Kilsyth,9833
+Lilydale Coldstream,19860
+Monbulk Silvan,5849
+Montrose,7138
+Mooroolbark,24057
+Olinda,10197
+Mount Evelyn,10298
+Upwey Tecoma,10023
+Wandin Seville,8067
+Yarra Valley,16836
+Melbourne South East,866324
+Cardinia,112441
+Beaconsfield Officer,19859
+Bunyip Garfield,9346
+Emerald Cockatoo,18905
+Koo Wee Rup,8566
+Pakenham North,22657
+Pakenham South,33108
+Casey North,141691
+Berwick North,24176
+Berwick South,29079
+Doveton,12274
+Hallam,11768
+Narre Warren North,8646
+Endeavour Hills North,12500
+Endeavour Hills South,14044
+Narre Warren North East,14195
+Narre Warren South West,15009
+Casey South,212181
+Cranbourne,21309
+Cranbourne East,49199
+Cranbourne North,24904
+Cranbourne South,11972
+Cranbourne West,19755
+Hampton Park,27656
+Lynbrook,17486
+Pearcedale Tooradin,8176
+Narre Warren South,13864
+Narre Warren South,17860
+Dandenong,205582
+Clarinda Oakleigh South,12340
+Clayton South,14288
+Dandenong,34295
+Dandenong North,23960
+Dingley Village,10753
+Keysborough,30889
+Noble Park North,7936
+Springvale,23915
+Springvale South,13408
+Noble Park East,13620
+Noble Park West,20178
+Monash,194429
+Ashwood Chadstone,20606
+Clayton,27555
+Glen Waverley East,22472
+Glen Waverley West,20964
+Mount Waverley North,16452
+Mount Waverley South,20239
+Mulgrave,21035
+Oakleigh Huntingdale,24068
+Wheelers Hill,21038
+Melbourne West,846457
+Brimbank,200346
+Ardeer Albion,8530
+Cairnlea,10643
+Deer Park Derrimut,28920
+Delahey,8816
+Keilor Downs,13834
+Kings Park,14691
+St Albans North,21795
+St Albans South,18554
+Sunshine,10641
+Sunshine North,12533
+Sunshine West,20267
+Sydenham,12799
+Taylors Lakes,18323
+Hobsons Bay,92256
+Altona,14002
+Altona Meadows,20454
+Altona North,15425
+Newport,19563
+Seabrook,5542
+Williamstown,17270
+Maribyrnong,93448
+Braybrook,20514
+Footscray,19148
+Maribyrnong,14115
+Seddon Kingsville,10121
+West Footscray Tottenham,12929
+Yarraville,16621
+Melton Bacchus Marsh,184425
+Bacchus Marsh,22964
+Hillside,25220
+Melton,20596
+Melton South,30689
+Melton West,20892
+Rockbank Mount Cottrell,8815
+Taylors Hill,21219
+Burnside,5396
+Burnside Heights,6785
+Caroline Springs,21849
+Wyndham,275982
+Hoppers Crossing North,20279
+Hoppers Crossing South,20664
+Laverton,11577
+Tarneit,46707
+Truganina,33144
+Werribee South,14162
+Wyndham Vale,29215
+Point Cook East,17886
+Point Cook North,25541
+Point Cook South,19473
+Werribee East,21064
+Werribee West,16270
+Mornington Peninsula,310279
+Frankston,142643
+Carrum Downs,22264
+Frankston,24104
+Frankston North,19940
+Frankston South,19305
+Langwarrin,25293
+Seaford,17490
+Skye Sandhurst,14247
+Mornington Peninsula,167636
+Dromana,12566
+Flinders,5646
+Hastings Somers,23654
+Mornington,26211
+Mount Eliza,19140
+Mount Martha,20022
+Point Nepean,18709
+Rosebud,22286
+Somerville,19402
+Ballarat Central,167552
+Ballarat East,111732
+Alfredton,14069
+Ballarat,12225
+Ballarat North,24457
+Ballarat South,25594
+Buninyong,7712
+Delacombe,8494
+Smythes Creek,4080
+Wendouree Miners Rest,15101
+Creswick Daylesford Ballan,29625
+Bacchus Marsh Region,6212
+Creswick Clunes,8088
+Daylesford,9326
+Gordon,5999
+Maryborough Pyrenees,26195
+Avoca,3364
+Beaufort,4548
+Golden Plains North,4862
+Maryborough,8066
+Maryborough Region,5355
+Bendigo,162918
+Bendigo,100991
+Bendigo,14779
+California Gully Eaglehawk,12978
+East Bendigo Kennington,13828
+Flora Hill Spring Gully,9692
+Kangaroo Flat Golden Square,20563
+Maiden Gully,5457
+Strathfieldsaye,9905
+White Hills Ascot,13789
+Heathcote Castlemaine Kyneton,50312
+Bendigo Region South,7891
+Castlemaine,11196
+Castlemaine Region,8797
+Heathcote,4690
+Kyneton,10226
+Woodend,7512
+Loddon Elmore,11615
+Bendigo Region North,4580
+Loddon,7035
+Geelong,310128
+Barwon West,20732
+Bannockburn,7347
+Golden Plains South,7433
+Winchelsea,5952
+Geelong,206080
+Belmont,14765
+Corio Norlane,27571
+Geelong,13587
+Geelong West Hamlyn Heights,20870
+Grovedale,29379
+Highton,23798
+Lara,20579
+Leopold,13836
+Newcomb Moolap,15119
+Newtown,10833
+North Geelong Bell Park,15743
+Surf Coast Bellarine Peninsula,83316
+Clifton Springs,15399
+Lorne Anglesea,5444
+Ocean Grove Barwon Heads,28053
+Portarlington,8158
+Point Lonsdale Queenscliff,4496
+Torquay,21766
+Hume,178686
+Upper Goulburn Valley,57258
+Alexandra,6650
+Euroa,6506
+Kilmore Broadford,15515
+Mansfield,9446
+Nagambie,4269
+Seymour,6452
+Seymour Region,4470
+Upper Yarra Valley,194
+Yea,3756
+Wangaratta Benalla,47351
+Benalla,10450
+Benalla Region,3665
+Rutherglen,4049
+Wangaratta,19411
+Wangaratta Region,9776
+Wodonga Alpine,74077
+Beechworth,4854
+Bright Mount Beauty,8526
+Chiltern Indigo Valley,3163
+Myrtleford,4753
+Towong,6014
+West Wodonga,15441
+Wodonga,26642
+Yackandandah,4684
+Latrobe Gippsland,286952
+Baw Baw,53486
+Drouin,18453
+Mount Baw Baw Region,6191
+Trafalgar,8078
+Warragul,20764
+Gippsland East,47422
+Alps East,3
+Bairnsdale,15565
+Bruthen Omeo,8171
+Lake King,0
+Lakes Entrance,10397
+Orbost,6448
+Paynesville,6838
+Gippsland South West,66346
+Foster,9079
+French Island,114
+Korumburra,9586
+Leongatha,11470
+Phillip Island,11750
+Wilsons Promontory,13
+Wonthaggi Inverloch,24334
+Latrobe Valley,75390
+Churchill,11628
+Moe Newborough,16821
+Morwell,14042
+Traralgon,28207
+Yallourn North Glengarry,4692
+Wellington,44308
+Alps West,24
+Longford Loch Sport,4452
+Maffra,14335
+Rosedale,4918
+Sale,15135
+Yarram,5444
+North West,152106
+Grampians,59084
+Ararat,8448
+Ararat Region,3245
+Horsham,16589
+Horsham Region,3394
+Nhill Region,6722
+St Arnaud,3284
+Stawell,8109
+West Wimmera,2713
+Yarriambiack,6580
+Mildura,55777
+Irymple,7193
+Merbein,4877
+Mildura Region,3775
+Red Cliffs,5990
+Mildura North,18709
+Mildura South,15233
+Murray River Swan Hill,37245
+Buloke,6127
+Gannawarra,6596
+Kerang,3868
+Robinvale,3328
+Swan Hill,11089
+Swan Hill Region,6237
+Shepparton,134144
+Campaspe,37830
+Echuca,14978
+Kyabram,11065
+Lockington Gunbower,3856
+Rochester,3888
+Rushworth,4043
+Moira,29925
+Cobram,6395
+Moira,2676
+Numurkah,12400
+Yarrawonga,8454
+Shepparton,66389
+Mooroopna,8144
+Shepparton North,19540
+Shepparton South,24420
+Shepparton Region East,3856
+Shepparton Region West,10429
+Warrnambool and South West,125360
+Glenelg Southern Grampians,35816
+Glenelg,8715
+Hamilton,10125
+Portland,10928
+Southern Grampians,6048
+Colac Corangamite,37495
+Camperdown,3506
+Colac,12574
+Colac Region,5364
+Corangamite North,5340
+Corangamite South,7103
+Otway,3608
+Warrnambool,52049
+Moyne East,6685
+Moyne West,9841
+Warrnambool North,22229
+Warrnambool South,13294
+Migratory Offshore Shipping,0
+Migratory Offshore Shipping,0
+Migratory Offshore Shipping,0
+Migratory Offshore Shipping,0
