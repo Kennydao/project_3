@@ -32,14 +32,6 @@ Jinja2==2.11.2
 joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1607956439537/work
 json5==0.9.5
 jsonschema==3.2.0
-jupyter-client==6.1.11
-jupyter-core==4.7.0
-jupyter-server==1.2.2
-jupyterlab==3.0.5
-jupyterlab-pygments==0.1.2
-jupyterlab-server==2.1.2
-Keras-Applications==1.0.8
-Keras-Preprocessing @ file:///home/conda/feedstock_root/build_artifacts/keras-preprocessing_1610713559828/work
 Markdown @ file:///home/conda/feedstock_root/build_artifacts/markdown_1603668500820/work
 MarkupSafe==1.1.1
 mistune==0.8.4
@@ -75,7 +67,6 @@ pyparsing==2.4.7
 pyreadline @ file:///D:/bld/pyreadline_1611175297308/work
 pyrsistent==0.17.3
 PySocks @ file:///D:/bld/pysocks_1610291658292/work
-pyspark @ file:///home/conda/feedstock_root/build_artifacts/pyspark_1599499400847/work
 python-dateutil==2.8.1
 pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1608904108784/work
 pywin32==300
@@ -89,10 +80,6 @@ scipy @ file:///C:/bld/scipy_1609458088359/work
 Send2Trash==1.5.0
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
 sniffio==1.2.0
-tensorboard==1.14.0
-tensorboard-plugin-wit @ file:///home/conda/feedstock_root/build_artifacts/tensorboard-plugin-wit_1611075653546/work/tensorboard_plugin_wit-1.8.0-py3-none-any.whl
-tensorflow @ file:///D:/bld/tensorflow_1594833538462/work/tensorflow-1.14.0-cp37-cp37m-win_amd64.whl
-tensorflow-estimator==1.14.0
 termcolor==1.1.0
 terminado==0.9.2
 testpath==0.4.4
