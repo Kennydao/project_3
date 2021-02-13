@@ -55,7 +55,7 @@ ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
 // });
 
 // use d3 to load population data in 2019
-d3.csv('../static/data/Vic_Subs_Popu_2019.csv', function(popuData) {
+d3.csv('../data/Vic_Subs_Popu_2019.csv', function(popuData) {
 
   // console.log(popuData);
 
@@ -75,7 +75,7 @@ d3.csv('../static/data/Vic_Subs_Popu_2019.csv', function(popuData) {
 console.log(suburbPopulation);
 
 // loadind median income data
-d3.csv('../static/data/Median_Income.csv', function(incomeData) {
+d3.csv('../data/Median_Income.csv', function(incomeData) {
 
   // console.log(incomeData);
 
@@ -120,7 +120,7 @@ d3.csv('../static/data/Melbourne_housing_FULL.csv', function(houseData) {
 
 
 // use d3 to load house price data from json file
-d3.json('../static/data/vic_suburb_stats.json', function(jsonData) {
+d3.json('../data/vic_suburb_stats.json', function(jsonData) {
 
   // console.log(jsonData);
   // console.log(jsonData['ABBOTSFORD-3067']['details']['suburb_name']);
