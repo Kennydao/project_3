@@ -56,7 +56,7 @@ ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
 // });
 
 // use d3 to load population data in 2019
-d3.csv('../data/Vic_Subs_Popu_2019.csv', function(popuData) {
+d3.csv('../static/data/Vic_Subs_Popu_2019.csv', function(popuData) {
 
   // console.log(popuData);
 
@@ -76,7 +76,7 @@ d3.csv('../data/Vic_Subs_Popu_2019.csv', function(popuData) {
 console.log(suburbPopulation);
 
 // loadind median income data
-d3.csv('../data/Median_Income.csv', function(incomeData) {
+d3.csv('../static/data/Median_Income.csv', function(incomeData) {
 
   // console.log(incomeData);
 
@@ -136,7 +136,7 @@ d3.json('../data/vic_suburb_stats.json', function(jsonData) {
 */
 
 // use jQuery to load boundaries data
-$.getJSON("../data/suburb-2-vic.geojson", function(data) {
+$.getJSON("../static/data/suburb-2-vic.geojson", function(data) {
 
   var info = L.control();
 
