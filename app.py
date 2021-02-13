@@ -11,23 +11,20 @@ from io import StringIO
 import pandas as pd
 
 # absolute path to this file
-FILE_DIR = os.path.dirname(os.path.abspath(__file__))
+# FILE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # absolute path to this file's root directory
-PARENT_DIR = os.path.join(FILE_DIR) #, os.pardir)
-print(PARENT_DIR)
+# PARENT_DIR = os.path.join(FILE_DIR) #, os.pardir)
 
-dir_of_interest = os.path.join(PARENT_DIR, 'static\data')
-print(dir_of_interest)
+# dir_of_interest = os.path.join(PARENT_DIR, 'static\data')
 
 app = Flask(__name__)
-
 
 @app.route("/")
 def index():
     # predictionModels.loadPredictiveModels()
 
-    return render_template("index.html", my_dir=dir_of_interest)
+    return render_template("index.html")
 
 @app.route("/popuPrediction", methods=['GET', 'POST'])
 def popuPrediction():

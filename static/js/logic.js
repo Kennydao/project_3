@@ -14,11 +14,8 @@ var houseData, covCases = {};
 var ttlCases;
 
 var suburbPopulation = {}, suburbIncome ={};
-// var pwd = {{my_dir}}
 
-// dir_of_interest = os.path.join(PARENT_DIR, 'static/data/');
 
-console.log(pwd);
 
 map = L.map("map", {center:[-37.8136, 144.9631], zoom: 6, minZoom: 6, maxZoom: 15, attributionControl: false});
 
@@ -59,7 +56,7 @@ ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
 // });
 
 // use d3 to load population data in 2019
-d3.csv('../static/data/Vic_Subs_Popu_2019.csv', function(popuData) {
+d3.csv('../data/Vic_Subs_Popu_2019.csv', function(popuData) {
 
   // console.log(popuData);
 
@@ -79,7 +76,7 @@ d3.csv('../static/data/Vic_Subs_Popu_2019.csv', function(popuData) {
 console.log(suburbPopulation);
 
 // loadind median income data
-d3.csv('../static/data/Median_Income.csv', function(incomeData) {
+d3.csv('../data/Median_Income.csv', function(incomeData) {
 
   // console.log(incomeData);
 
@@ -125,7 +122,7 @@ d3.csv('../static/data/Melbourne_housing_FULL.csv', function(houseData) {
 
 // use d3 to load house price data from json file
 /*
-d3.json('../static/data/vic_suburb_stats.json', function(jsonData) {
+d3.json('../data/vic_suburb_stats.json', function(jsonData) {
 
   // console.log(jsonData);
   // console.log(jsonData['ABBOTSFORD-3067']['details']['suburb_name']);
@@ -139,7 +136,7 @@ d3.json('../static/data/vic_suburb_stats.json', function(jsonData) {
 */
 
 // use jQuery to load boundaries data
-$.getJSON("../static/data/suburb-2-vic.geojson", function(data) {
+$.getJSON("../data/suburb-2-vic.geojson", function(data) {
 
   var info = L.control();
 
