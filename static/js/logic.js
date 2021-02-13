@@ -133,7 +133,7 @@ d3.json('../data/vic_suburb_stats.json', function(jsonData) {
 // console.log(houseData);
 
 // use jQuery to load boundaries data
-$.getJSON("../static/data/suburb-2-vic.geojson", function(data) {
+$.getJSON("../data/suburb-2-vic.geojson", function(data) {
 
   var info = L.control();
 
