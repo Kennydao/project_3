@@ -87,10 +87,10 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		/* background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png"); */
 		background-color: #f7f7f7;
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
@@ -142,7 +142,7 @@ input, select, textarea {
 		}
 
 	h2 {
-		font-size: 0.5 em;
+		font-size: 0.8 em;
 		color:#0090c5;
 		margin: 0 0 1.1em 0;
 		line-height: 1em;
@@ -196,7 +196,7 @@ input, select, textarea {
 /* Container */
 
 	.container {
-		margin: 0 auto;
+		margin: 0;
 		max-width: 100%;
 		width: 1400px;
 	}
@@ -233,7 +233,7 @@ input, select, textarea {
 
 			.container {
 				width: 100%;
-				/*--background-color: darkorange;*/
+				/* --background-color: darkorange; */
 			}
 
 		}
@@ -750,7 +750,7 @@ input, select, textarea {
 				box-sizing: border-box;
 				align-items: stretch;
 				margin-left: auto;
-				/*background-color: darkslategrey;*/
+				background-color: darkslategrey;
 
 			}
 
@@ -1954,9 +1954,10 @@ input, select, textarea {
 	}
 
 	#main-wrapper {
-		background: rgb(34, 33, 33);
-		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
-		/* padding: 5em 0 5em 0; */
+		/* background: rgb(34, 33, 33); */
+		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.5);
+		padding: 0.8em 0em 0em 0em;
+		margin-right: 0em;
 	}
 
 	#footer-wrapper {
@@ -2003,7 +2004,7 @@ input, select, textarea {
 		position: absolute;
 		right: 0;
 		top: 0;
-		font-size: 0.9em;
+		font-size: 1.0em;
 	}
 
 		#nav ul {
@@ -2024,10 +2025,10 @@ input, select, textarea {
 					transition: background-color .25s ease-in-out;
 					font-weight: 800;
 					letter-spacing: 0.025em;
-					color: #131212;
+					/* color: #131212; */
 					text-decoration: none;
 					border-radius: 6px;
-					padding: 0.5em 1em 0.5em 1em;
+					padding: 0.5em 1em 0.5em 0.5em;
 				}
 
 				#nav ul li > ul {
@@ -2092,7 +2093,7 @@ input, select, textarea {
 			}
 
 		.dropotron.level-0 {
-			font-size: 0.8em;
+			font-size: 0.9em;
 			margin-left: 1.5em;
 			margin-top: 0;
 		}
@@ -2667,9 +2668,8 @@ input, select, textarea {
 
 			#main-wrapper, #footer-wrapper {
 				padding: 40px 30px 40px 30px;
-				/* tesing */
-				margin-left: 30px;
-				margin-right: 30px;
+				margin-left: 0px;
+				margin-right: 0px;
 			}
 
 		/* Logo */

@@ -7,9 +7,9 @@ body {
 body,
 html
 {
-  /* width: 100%; */
+  width: 100%;
   height: 100vh;
-  background-color: rgb(44, 43, 43);
+  /* background-color: rgb(44, 43, 43); */
 
 }
 
@@ -24,13 +24,13 @@ html
   font-family: Georgia, serif;
 } */
 
-/* .map {
+.map {
   width: 100%;
   height: 100vh;
   font-family: inherit;
   font-size: inherit;
-  background: transparent;
-} */
+  /* background: transparent; */
+}
 
 .leaflet-tile-pane { opacity: .8; }
 
@@ -49,6 +49,12 @@ background-color: black;
 
 } */
 
+#side-bar {
+  background-color:  rgb(61, 61, 61);
+  color:#fff;
+  height: 100vh;
+}
+
 #divFact {
   color: white;
   background-color: rgb(44, 43, 43);
@@ -59,10 +65,9 @@ background-color: black;
 
 
 #divPrediction {
-  color: white;
-  background-color: rgb(44, 43, 43);
+  color: #fff;
+  background: #0090c5;
   text-align: center;
-  margin-left: 1px;
 }
 
 .errorMsg {
@@ -72,32 +77,33 @@ background-color: black;
 }
 .info {
   padding: 3px 6px;
-  font: 11px/13px Arial, Helvetica, sans-serif;
-  margin-left: 1px;
+  font: 11px/11px Arial, Helvetica, sans-serif;
+  margin-left: 0px;
   /* background: white; */
   background: rgba(255,255,255,0.8);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
 .legend {
   margin-left: 4px;
-  line-height: 18px;
+  line-height: 3px;
   color: #555;
 
 }
 .legend i {
-  width: 62px;
-  height: 16px;
+  width: 42px;
+  height: 10px;
   float: left;
   margin-left: 5px;
   opacity: 0.7;
 }
 
-#side-bar {
-  background-color:  rgb(44, 43, 43);
-  height: 100vh;
-}
-
 .col-xs-12, .col-xs-6, .col-xs-4 {
   padding: 3px;
+}
+
+#divSelection, #btnPrediHouse, #btnPopuGrowth{
+  color: #fff;
+  background:#0090c5;
+  border-radius: 5px;
 }

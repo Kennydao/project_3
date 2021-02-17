@@ -1,20 +1,24 @@
-//
 //https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}
 // define variables
 var map;
 var lyrOSM;
-var lyrCovid;
+var lyrTopo;
+var lyrImagery;
+var lyrPopulation;
 var ctlLayers;
 
-var selSuburb, selYear, selBedroom, popuValue, subPopuVal;
-var subIncome;
+var selSuburb, selYear, selBedroom, popuValue, subPopuVal, covCaseVal;
+var subIncome, avgIncomeVal;
 var arSuburbs = [];
 
-var houseData, covCases = {};
-var ttlCases;
-
-var suburbPopulation = {}, suburbIncome ={};
-
+var housePriceData= {};
+var covidCases = {};
+var suburbPopulation = {};
+var suburbIncome ={};
+var ttlIncomeVal;
+var ttlMedianHousePrice;
+var calMedianHousePrice;
+var name, houseName, medHousePrice;
 
 
 map = L.map("map", {center:[-37.8136, 144.9631], zoom: 6, minZoom: 6, maxZoom: 15, attributionControl: false});
@@ -26,34 +30,16 @@ map = L.map("map", {center:[-37.8136, 144.9631], zoom: 6, minZoom: 6, maxZoom: 1
 // });
 
 lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
-lyrOSM.addTo(map);
-
-/*
+// lyrOSM.addTo(map);
 lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
-map.addLayer(lyrCovid);
+// lyrOSM.addTo(map);
 
+lyrTopo = L.tileLayer.provider('OpenTopoMap');
+// lyrTopo.addTo(map);
 
-// setup layer control
-objBasemaps = {
-  "Outdoor": lyrStamen,
-  "Open Street Map": lyrOSM
-};
+lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
+lyrImagery.addTo(map);
 
-objOverlays ={
-  "Population Distribution": geojson,
-  "Covid Cases": lyrCovid
-
-}
-
-ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
-*/
-
-// use d3 to load csv file and create dictionary to hold key/value pairs
-// d3.csv('../static/data/COVID19 Data Viz Postcode data - postcode.csv', function(parData) {
-
-//   parseData(parData);
-
-// });
 
 // use d3 to load population data in 2019
 d3.csv('../static/data/Vic_Subs_Popu_2019.csv', function(popuData) {
@@ -65,59 +51,99 @@ d3.csv('../static/data/Vic_Subs_Popu_2019.csv', function(popuData) {
   for (var i = 0; i < popuData.length; i++) {
     var att = popuData[i];
 
-    subName = att.Region;
+    subName = att.Suburb;
+    // console.log(subName)
     suburbPopulation[subName] = att.Value;
-    // suburbPopulation['Value'] = att['Value'];
-    // suburbPopulation.push(subName,att.Value)
 
+    arSuburbs.push(subName);
+
+  // sort the suburb array
+  arSuburbs.sort();
   }
 });
 
-console.log(suburbPopulation);
 
-// loadind median income data
+
+// console.log(suburbPopulation);
+
+// loading median income data
 d3.csv('../static/data/Median_Income.csv', function(incomeData) {
 
   // console.log(incomeData);
 
   incomeData['Median Income'] = +incomeData['Median Income'] ;
 
+  ttlIncomeVal = 0
   for (var i = 0; i < incomeData.length; i++) {
 
     var att = incomeData[i];
 
     subName = att.Suburb;
     suburbIncome[subName] = att['Median Income'];
+
+    ttlIncomeVal = ttlIncomeVal + parseFloat(att['Median Income']);
     // suburbPopulation['Value'] = att['Value'];
     // suburbPopulation.push(subName,att.Value)
 
-  }
-});
+    }
+  avgIncomeVal = (ttlIncomeVal/i).toFixed(0);
+
+  });
+
 
 // console.log(suburbIncome);
 
+// covid data
+d3.csv('../static/data/cleaned_covid19_cases.csv', function(covidData) {
 
 
-/*
-// loading & parsing housing data
-d3.csv('../static/data/Melbourne_housing_FULL.csv', function(houseData) {
+  covidData['cases'] = +covidData['cases'];
+
+  for (var i = 0; i < covidData.length; i++) {
+
+    var att = covidData[i];
+
+    subName = att.Suburb;
+    covidCases[subName] = att.cases;
+
+    }
+
+  });
+
+// console.log(covidCases);
+
+
+d3.csv('../static/data/Vic_House_Median_Price.csv', function(houseData) {
 
   // console.log(houseData)
-  houseData.Price = +houseData.Price;
-  houseData = {}
+  houseData['Median Price'] = +houseData['Median Price'];
+  // houseData = {}
+  ttlMedianHousePrice = 0.0;
+  calMedHousePrice = 0.0
 
   for (var i = 0; i < houseData.length; i++) {
     var att = houseData[i];
-    houseData[att.Suburb] = att.Price;
+
+    subName = att.Suburb;
+    // console.log(subName, att['Median Price']);
 
 
-    // total cases
-    // ttlCases = ttlCases + parseFloat(att.cases);
+    housePriceData[subName] = att['Median Price'];
+
+    // total median house price
+    // console.log(att['Median Price']);
+    ttlMedianHousePrice = ttlMedianHousePrice + parseFloat(att['Median Price']);
   }
-});
 
-*/
+  // ttlMedianHousePrice = ttlMedianHousePrice.toFixed(0)
+  // console.log('total med price', ttlMedianHousePrice);
 
+  // calculating median house price based on the entire dataset
+  calMedHousePrice = ((ttlMedianHousePrice/i)/2).toFixed(0);
+
+  });
+
+// console.log(housePriceData);
 
 
 // use d3 to load house price data from json file
@@ -133,139 +159,170 @@ d3.json('../data/vic_suburb_stats.json', function(jsonData) {
   });
 
 // console.log(houseData);
+
 */
+$(document).ready(function(){
+  // use jQuery to load boundaries data
+  $.getJSON("../static/data/suburb-2-vic.geojson", function(data) {
 
-// use jQuery to load boundaries data
-$.getJSON("../static/data/suburb-2-vic.geojson", function(data) {
+    // console.log(data);
 
-  var info = L.control();
+    var info = L.control();
 
-  // console.log(info);
-  // console.log(data);
+    // console.log(info);
+    // console.log(data);
 
-  info.update = function (props, name) {
+    info.update = function (props, name) {
 
-    console.log(name);
-    console.log(suburbIncome[name]);
+      cleanedName(name);
 
-    if (isNaN(suburbPopulation[name])) {
-      // console.log(name);
-      // cleanedName(name)
-      // console.log(suburbPopulation[name]);
-      // popuValue = 0; //suburbPopulation[name];
-      this._div.innerHTML = (props ? '<b>' + name + '</b>' + '<i>' + " Data Not Available!" +'</i>' : '<i>Hover over a suburb</i>');
-
-    }
-
-    else {
-      popuValue = suburbPopulation[name];
-      this._div.innerHTML = (props ? '<b>' + name + ": " + numberWithCommas(popuValue) + ' people'+'</b>' : '<i>Hover over a suburb</i>');
-
-    // display stats data about the suburb on table
-    // console.log()
+      subPopuVal = suburbPopulation[name];
+       if (isNaN(subPopuVal)){
+        this._div.innerHTML = (props ? '<b>' + name + '</b>' + '<i>' + " Population Data Not Found!" +'</i>' : '<i>Hover over a suburb</i>');
+        }
+      else {
+        this._div.innerHTML = (props ? '<b>' + name + ": " + numberWithCommas(subPopuVal) + ' people'+'</b>' : '<i>Hover over a suburb</i>');
       }
-  };
 
-  info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-  };
+    };
 
-  info.addTo(map);
+    info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+      this.update();
+      return this._div;
+    };
 
-  var geojson = L.geoJson(data, { style: myStyle,
+    info.addTo(map);
 
-    onEachFeature: function (feature, layer) {
+    var lyrPopulation = L.geoJson(data, { style: myStyle,
 
-      // layer.bindPopup(feature.properties['vic_loca_2']);
+      onEachFeature: function (feature, layer) {
 
-      // acquiring the list of suburbs name
+        // acquiring the list of suburbs name
 
-      // feature.properties['vic_loca_2'] = toUpper(feature.properties['vic_loca_2']);
-      arSuburbs.push(feature.properties['vic_loca_2']);
+        // feature.properties['vic_loca_2'] = toUpper(feature.properties['vic_loca_2']);
 
-
-      layer
-      .on('mouseover', function(e) {
-        // console.log(suburbPopulation[feature.properties['vic_loca_2']]);
-
-
-        layer.setStyle({
-          weight: 2,
-          color: '#99e600',//#bbff33',
-          dashArray: '3',
-          fillOpacity: 0.6
-        });
+        // medHousePrice = housePriceData[feature.properties.vic_loca_2];
+        // popuValue = suburbPopulation[feature.properties.vic_loca_2]
+        // subPopuVal = suburbPopulation[feature.properties.vic_loca_2];
+        // covCaseVal = covidCases[feature.properties.vic_loca_2];
+        // incomeVal = suburbIncome[feature.properties.vic_loca_2];
 
 
-        // refresh suburb name
+        if (isNaN(subPopuVal)) {
 
-        info.update(layer.feature.properties, layer.feature.properties['vic_loca_2']);
+          layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
+                                          feature.properties['vic_loca_2'] + "</h4></b>" +
+                                          "• Population: " + 'Data Not Found!')
+          }
 
-      })
+        else {
+          if (isNaN(medHousePrice)) {
+              medHousePrice = ' unavailable!';//calMedHousePrice;
+          }
 
-      .on('mouseout', function(e) {
-        geojson.resetStyle(e.target); //layer geojson
-        info.update();
-      })
+          if (isNaN(incomeVal)) {
 
-    }
+            incomeVal = 'Data unavailable'; //avgIncomeVal;
+            }
 
-  })
+          if (isNaN(covCaseVal)) {
+            covCaseVal = 0;
+          }
 
-  geojson.addTo(map);
+          layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
+                                          feature.properties['vic_loca_2'] + "</h4></b>" +
+                                          "• Population: " + numberWithCommas(subPopuVal) + '<br>' +
+                                          "• Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
+                                          "• Median House Price: $" + numberWithCommas(medHousePrice) +'<br>' +
+                                          "• Covid Cases: " + covCaseVal);
+          }
+        layer
+        .on('mouseover', function(e) {
 
-  var bounds = geojson.getBounds();
 
-  map.fitBounds(bounds);
+          layer.setStyle({
+            weight: 2,
+            color: '#bbff33', //'#99e600'
+            dashArray: '3',
+            fillOpacity: 0.5
+          });
 
-  map.options.maxBounds = bounds;
-  map.options.minZoom = map.getZoom();
+          // refresh suburb name
 
-  arSuburbs.sort();
+          info.update(layer.feature.properties, layer.feature.properties['vic_loca_2']);
 
-  // console.log(arSuburbs);
+          })
 
-  // use autocomplete plugin to display suburbs name
-  $("#txtSubHouse").autocomplete({
-    source: arSuburbs
+        .on('mouseout', function(e) {
+          lyrPopulation.resetStyle(e.target); //layer geojson
+          info.update();
+        })
+      }
+
+      });
+
+
+    lyrPopulation.addTo(map);
+
+    // var bounds = lyrPopulation.getBounds();
+    // map.fitBounds(bounds);
+    // map.options.maxBounds = bounds;
+    // map.options.minZoom = map.getZoom();
+
+
+    // console.log(arSuburbs);
+    // use autocomplete plugin to display suburbs name
+    $("#txtSubHouse").autocomplete({
+      source: arSuburbs
+    });
+
+
   });
 
+
+  /*
+  // setup layer control
+  objBasemaps = {
+    "Topo Map": lyrTopo,
+    "Open Street Map": lyrOSM,
+    "Imagery": lyrImagery
+
+  };
+
+  objOverlays ={
+    "Population Distribution": geojson,
+    "Covid Cases": lyrCovid
+  }
+  */
 });
 
+// ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
 
-// function (feature) {
-//   return {
-//     fillColor: getColor(popuValue), //'white'
-//     color: 'brown', //'beige'
-//     weight: 1.0,
-//     fillOpacity: 0.5
-//   };
 
 // function style
 function myStyle(feature) {
-
-  // var subName =
   feature.properties['vic_loca_2'] = toUpper(feature.properties['vic_loca_2']);
+  cleanedName(feature.properties['vic_loca_2']);
 
-
+  // acquire the suburb's population
   subPopuVal = suburbPopulation[feature.properties.vic_loca_2];
+  covCaseVal = covidCases[feature.properties.vic_loca_2];
+  incomeVal = suburbIncome[feature.properties.vic_loca_2];
+  medHousePrice = housePriceData[feature.properties.vic_loca_2];
 
-  if (isNaN(subPopuVal)) {
-    // try to assign most suitable suburb name
-    cleanedName(feature.properties['vic_loca_2']);
+  // assigne medHousePrice in case there is no value in the dataset
+  if (medHousePrice == 0) {
+    medHousePrice = calMedianHousePrice;
   }
 
-  // console.log('inside myStyle',subPopuVal);
-
   return {
-    // fillColor: getColor(subPopuVal),
-    weight: 0.6,
-    color: 'beige',
-    // dashArray: '2',
-    fillOpacity: 0.3
-  };
+        fillColor: getColor(subPopuVal),
+        weight: 1,
+        color: '#c2c2d6', // light dark
+        dashArray: '2',
+        fillOpacity: 0.5
+      };
 }
 
 // function to assign most suitable suburb name
@@ -317,55 +374,43 @@ function toUpper(str) {
 
 // Function number with comma
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  if (isNaN(x)) {
+    return 0;
+  }
+  else {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 }
 
-function housingPricePrediction() {
-  console.log(housePriceModel);
 
-}
-
+/*
 $("#btnPrediHouse").click(function() {
 
-  // alert('Housing Price Prediction');
+  alert('Housing Price Prediction');
+
   selSuburb = $("#txtSubHouse").val();
   selYear = $("#txtYearHouse").val();
   selBedroom = $("#txtBedroom").val();
 
   console.log(selSuburb, selBedroom, selYear);
 
-  // calling on prediction function
-  // housingPricePrediction();
-  // console.log(housePriceModel)
+
 });
 
 $("#btnPopuGrowth").click(function() {
 
-  // alert('Population Growth Prediction')
-  // selSuburb = $("#txtSubHouse").val();
-  selYear = $("#txtYearHouse").val();
-  // selBedroom = $("#txtBedroom").val();
-  // console.log(selSuburb, selBedroom, selYear);
-  d3.json('/prediction?Year='+selSuburb+'&selBedroom='+selBedroom)
-  // d3.select("divResults").selectAll("<p>")
-  //   .append("<p>")
-  //   .html(`${prediction}`)
-});
 
-$("#btnLivingCost").click(function() {
-
-  alert('Population Growth Prediction')
   selSuburb = $("#txtSubHouse").val();
   selYear = $("#txtYearHouse").val();
   selBedroom = $("#txtBedroom").val();
   console.log(selSuburb, selBedroom, selYear);
+  $
 
+  //  d3.select("divPopuResult").selectAll("<p>")
+  //   .append("<p>")
+  //   .html(`{popuPrediction}`)
 });
-
-$('#example').DataTable();
-// $('#table_id').DataTable( {
-//   data: suburbIncome
-// } );
+*/
 
 // function to parse data from csv file
 function parseData(parData) {
@@ -377,329 +422,34 @@ function parseData(parData) {
     var att = parData[i];
     covCases[att.postcode] = att.cases;
 
-
-    // total cases
-    ttlCases = ttlCases + parseFloat(att.cases);
   }
 }
-
-// console.log(covCases);
-// console.log('total cases: ', ttlCases);
 
 // function to assign suitable color depend up export value
 function getColor(val) {
 
-  // console.log('inside getColor!', val);
-
-  // use conditional operator (?:) to return suitable color scheme
-  if (isNaN(val)) {
-    return '#cccccc';
-  }
-  else {
-    return val < 1   ? '#e0e0eb':
-          val < 1000   ? '#ddff99':
-          val < 5000  ? '#ccff66':
-          val < 10000  ? '#bbff33':
-          val < 20000 ? '#99e600':
-          val < 50000 ? '#77b300':
-          val < 100000 ? '#669900':
-          val < 200000 ? '#558000':
-                        '#446600';
-    }
-}
-
-
-
+  return val < 0   ? ' #111a00':
+          val < 10    ? '#223300':
+          val < 100   ? '#334d00':
+          val < 1000  ? '#558000':
+          val < 5000  ? '#669900':
+          val < 10000 ?  '#88cc00':
+          val < 20000 ?  '#b3ff1a':
+          val < 30000 ?  '#ccff66':
+          val < 50000 ?  '#eeffcc':
+                        ' #111a00';
 /*
-// Use Thunderforest.Outdoors layer as basemap
-var lyrOutdoors = L.tileLayer.provider('Thunderforest.Outdoors');
-var lyrBoundaries;
-
-myMap.addLayer(lyrOutdoors);
-
-const geoData = '../static/data/countries.geojson';
-
-var expDict = {};
-var impDict = {};
-
-var expVal, impVal, defVal, selYear, ctyExpVal, ttlExpVal;
-
-// use d3 to load csv file and create dictionary to hold key/value pairs
-d3.csv('../static/data/export_data_2018.csv', function(expData) {
-
-  parseData(expData);
-
-});
-
-// setup tooltip for each country and display on map
-setTooltip();
-
-clickHandler();
-
-
-// setting tooltip for layerBoundaries
-function setTooltip() {
-  lyrBoundaries = new L.LayerGroup();
-
-  lyrBoundaries = L.geoJSON.ajax('../static/data/countries.geojson',{ style: myStyle,
-    onEachFeature: function(feature, layer) {
-
-    if (isNaN(ctyExpVal)) {
-      layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
-      feature.properties.ADMIN + "</h4></b>" + "Data unavailable!");
-      }
-    else {
-
-      var expVal = parseFloat(ctyExpVal).toFixed(2);
-      var impNum = parseFloat(impVal).toFixed(2);
-
-      var trdDefi = expVal - impNum;
-      trdDefi.toFixed(2);
-
-      pctExpVal = expVal*100/ttlExpVal;
-      pctExpVal = pctExpVal.toFixed(3);
-
-      expVal = numberWithCommas(expVal);
-      impNum = numberWithCommas(impNum);
-      pctExpVal = numberWithCommas(pctExpVal);
-
-      layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" + feature.properties.ADMIN + "</h4></b>" +
-        "• Export: " + '$' + expVal + '<br>' + '• Import: ' + '$' + impNum + '<br>' +
-        '• Surplus: ' + (trdDefi < 0 ? '-' + formatDollar(trdDefi) : formatDollar(trdDefi)) + '<br>' +
-        '• Contribution: ' + pctExpVal +'%',{interactive:false});
-
-      layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight
-        });
-      }
-    }
-  });
-  // refresh layer boundaries with respective tooltip data to map
-  lyrBoundaries.addTo(myMap);
-}
-
-// use jQuery library to acquire the selected year in radio button
-$("input[name=fltYear]").click(function(e){
-
-  // e.layer.resetStyle()
-  myMap.removeLayer(lyrBoundaries);
-  // lyrBoundaries.resetStyle();
-
-  selYear = $("input[name=fltYear]:checked").val();
-
-  switch(selYear) {
-    case '2016':
-      d3.csv('../static/data/export_data_2016.csv', function(expData) {
-
-        parseData(expData);
-
-      });
-
-
-      break;
-
-    case '2017':
-      d3.csv('../static/data/export_data_2017.csv', function(expData) {
-
-        parseData(expData);
-
-      });
-
-      break;
-
-    case '2018':
-      d3.csv('../static/data/export_data_2018.csv', function(expData) {
-
-        parseData(expData);
-
-      });
-
-      break;
-  }
-
-  // set tooltip for each country
-  setTooltip();
-
-  // assign country data
-  clickHandler();
-});
-
-// function to parse data from csv file
-
-function parseData(expData) {
-
-  expData.export_value = +expData.export_value;
-  expData.import_value = +expData.import_value;
-  ttlExpVal = 0;
-
-  for (var i = 0; i < expData.length; i++) {
-    var att = expData[i];
-    expDict[att.location_code] = att.export_value;
-    impDict[att.location_code] = att.import_value;
-
-    // total export value
-    ttlExpVal = ttlExpVal + parseFloat(att.export_value);
-  }
-}
-// function style
-function myStyle(feature) {
-
-  if (feature.properties.ISO_A3 != "-99") {
-    ctyExpVal = expDict[feature.properties.ISO_A3];
-    impVal = impDict[feature.properties.ISO_A3];
-
-    return {
-        fillColor: getColor(ctyExpVal),
-        weight: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-      };
-    }
-  else {
-    return {
-        fillColor: '#f0f0f5', //getColor(ctyExpVal),
-        weight: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-      };
-    }
-}
-
-// function higlight Feature
-function highlightFeature(e) {
-  var layer = e.target;
-
-  layer.setStyle({
-      weight: 2,
-      color: '#666',
-      dashArray: '3',
-      fillOpacity: 0.7
-  });
-
-  // if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-  //     layer.bringToFront();
-  // }
-}
-
-// function reset highlight
-function resetHighlight(e) {
-  lyrBoundaries.resetStyle(e.target);
-}
-
-// function to assign suitable color depend up export value
-function getColor(val) {
-  if (val == 'NaN') {
-    return '#f0f0f5';
-  }
-
-  // use conditional operator (?:) to return suitable color scheme
-    return  val < 1000000   ? '#eeffcc':
-            val < 10000000   ? '#ddff99':
-            val < 100000000  ? '#ccff66':
-            val < 1000000000  ? '#bbff33':
-            val < 10000000000 ? '#99e600':
-            val < 100000000000 ? '#88cc00':
-            val < 1000000000000 ? '#669900':
-            val < 2000000000000 ? '#446600':
-            val < 3000000000000 ? '#223300':
-                                  '#f0f0f5';
-  }
-
-// Function to format number with dollar sign
-function formatDollar(num) {
-  var p = num.toFixed(2).split(".");
-
-  return "$" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
-      return  num=="-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
-  }, "") + "." + p[1];
-}
-
-// Function number with comma
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-// Set up the legend
-var legend = L.control({position: 'bottomleft'});
-
-  legend.onAdd = function () {
-
-    var div = L.DomUtil.create('div', 'info legend');
-
-    var lgdInfo = [1000000, 10000000, 100000000,
-                  1000000000, 10000000000, 100000000000,
-                  1000000000000, 2000000000000];
-
-    var labels = ['$1M', '$10M', '$100M', '$1B', '$100B', '$1T', '$2T', '$2T+'];
-
-    div.innerHTML += "<ul>" + labels.join("&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;") + "</ul>";
-    for (var i = 0; i < lgdInfo.length; i++) {
-      div.innerHTML += '<i style="background-color:' + getColor(lgdInfo[i]) +'" ></i>'
-    }
-    return div;
-  };
-
-// Add legend to the map
-legend.addTo(myMap);
-
-// Default country table values
-country = "Australia";
-
-d3.json(`/data/${country}`, function(data) {
-
-  var keys = Object.keys(data);
-  var values = Object.values(data);
-
-  keys.shift();
-
-  var a = [];
-
-  keys.forEach(function(x) {
-    a.push({x: data[x]});
-  });
-
-  d3.select("tbody").selectAll("tr")
-    .data(a)
-    .enter()
-    .append("tr")
-    .html(function(d, i) {
-      return `<th scope="row">${keys[i]}</th><td>${d.x}</td>`
-    });
-});
-
-function clickHandler() {
-  lyrBoundaries.on('click', function(e){
-
-    // highlightFeature(e);
-    // resetHighlight(e);
-
-    var country = e.layer.feature.properties.ADMIN;
-
-    d3.json(`/data/${country}`, function(data) {
-      var keys = Object.keys(data);
-      var values = Object.values(data);
-
-    keys.shift();
-
-      var a = [];
-
-      keys.forEach(function(x) {
-        a.push({x: data[x]});
-      });
-
-      d3.select("tbody").html("");
-
-      d3.select("tbody").selectAll("tr")
-        .data(a)
-        .enter()
-        .append("tr")
-        .html(function(d, i) {
-          return `<th scope="row">${keys[i]}</th><td>${d.x}</td>`
-        });
-    });
-  });
-}
+    return val < 0   ? '#e6ffb3':
+          val < 10    ? '#e6ffb3':
+          val < 100   ? '#ccff66':
+          val < 1000  ? '#b3ff1a':
+          val < 5000  ? '#88cc00':
+          val < 10000 ? '#669900':
+          val < 20000 ? '#558000':
+          val < 30000 ? '#334d00':
+          val < 50000 ? '#223300':
+                        '#f7ffe6';
 */
+}
+
+
