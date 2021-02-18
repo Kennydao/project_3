@@ -242,5 +242,10 @@ def data_3():
 
     return render_template("data_3.html")
 
+@app.route("/projectInfo")
+def projectInfo():
+
+
+    return render_template("modal.html")
 if __name__ == "__main__":
     app.run(debug=True)
