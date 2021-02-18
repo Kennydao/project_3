@@ -302,8 +302,13 @@ $(document).ready(function(){
 
 // function style
 function myStyle(feature) {
+
+  // console.log('bf: ', feature.properties['vic_loca_2']);
   feature.properties['vic_loca_2'] = toUpper(feature.properties['vic_loca_2']);
+
   cleanedName(feature.properties['vic_loca_2']);
+
+  // console.log('after:' ,feature.properties['vic_loca_2']);
 
   // acquire the suburb's population
   subPopuVal = suburbPopulation[feature.properties.vic_loca_2];
