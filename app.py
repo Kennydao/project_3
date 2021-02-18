@@ -47,56 +47,6 @@ def estimate_coef(x, y):
 
     return(b_0, b_1)
 
-
-def housePricePrediction(answer):
-    # print('inside housePrediction')
-
-    if request.method == 'GET':
-        bedRoom = request.args.get('selBedroom')
-        print(bedRoom)
-    if request.method == 'POST':
-        print(request)
-        print(request.form["subHouse"])
-        print(request.form["bedRoom"])
-        print(request.form["yearHouse"])
-
-
-
-    subHouse = request.form["subHouse"]
-    inputYear = int(request.form["yearHouse"])
-    inputRoom = int(request.form["bedRoom"])
-
-    if subHouse in subNameList:
-        print('Found the suburb in the dataset!', subHouse)
-
-        for i in range(0, len(subNameList)):
-            if subNameList[i] == subHouse:
-                pointer = i
-                break
-        nArray = np.zeros(colsLength)
-        nArray[0] = inputRoom
-        nArray[1] = inputYear
-        nArray[pointer+2] = 1
-        print(nArray[0], nArray[1])
-        # print('nArray',[pointer+1]+ ' , ', nArray[pointer+1])
-        nArray = np.array(nArray, ndmin=2)
-
-        # load trained model for prediction
-        model = joblib.load('Vic_house_trained_model_1.pkl')
-
-        print(model)
-
-        answer = model.predict(nArray)
-        print(answer)
-
-
-
-        # redirect back to homepage
-
-        return answer #Flask.Response(response='n', status=status, mimetype='application/json') #redirect("/") jsonify(data)
-    else:
-        return 1
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -108,7 +58,7 @@ def index():
 @app.route("/Prediction", methods=['GET', 'POST'])
 
 def Prediction():
-
+    '''
     if request.method == 'GET':
         selYear = request.args.get('selYear')
         print(bedRoom)
@@ -119,7 +69,7 @@ def Prediction():
         print(request.form["yearHouse"])
         # print('Hello world')
 
-
+    '''
 
     suburbName = request.form["subHouse"]
     X_observation = request.form["yearHouse"]
@@ -149,7 +99,7 @@ def Prediction():
         inputRoom = int(request.form["bedRoom"])
 
         if subHouse in subNameList:
-            print('Found the suburb in the dataset!', subHouse)
+            # print('Found the suburb in the dataset!', subHouse)
 
             for i in range(0, len(subNameList)):
                 if subNameList[i] == subHouse:
@@ -160,22 +110,18 @@ def Prediction():
             nArray[0] = inputRoom
             nArray[1] = inputYear
             nArray[pointer+2] = 1
-            print(nArray[0], nArray[1])
+            # print(nArray[0], nArray[1])
             # print('nArray',[pointer+1]+ ' , ', nArray[pointer+1])
             nArray = np.array(nArray, ndmin=2)
 
             # load trained model for prediction
             model = joblib.load('Vic_house_trained_model_1.pkl')
 
-            print(model)
+            # print(model)
 
             outCome = model.predict(nArray)
-            print(outCome)
-
-
-        ###
-
-
+            outCome = int(outCome)
+            # print(outCome)
 
         return render_template("index.html", txtMessage_1='Estimated Population:', popuPrediction = int(y_observation), txtMessage_2 = 'Estimated House Price:', housePricePred = outCome, yearInput = X_observation, subInput = suburbName)
         #Flask.Response(response='n', status=status, mimetype='application/json') #redirect("/") jsonify(data)
@@ -246,6 +192,6 @@ def data_3():
 def projectInfo():
 
 
-    return render_template("modal.html")
+    return render_template("index.html")
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
