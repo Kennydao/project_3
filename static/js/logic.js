@@ -19,7 +19,7 @@ var ttlIncomeVal;
 var ttlMedianHousePrice;
 var calMedianHousePrice;
 var name, houseName, medHousePrice;
-
+var nanSubList = [];
 
 map = L.map("map", {center:[-37.8136, 144.9631], zoom: 6, minZoom: 6, maxZoom: 15, attributionControl: false});
 
@@ -145,22 +145,6 @@ d3.csv('../static/data/Vic_House_Median_Price.csv', function(houseData) {
 
 // console.log(housePriceData);
 
-
-// use d3 to load house price data from json file
-/*
-d3.json('../data/vic_suburb_stats.json', function(jsonData) {
-
-  // console.log(jsonData);
-  // console.log(jsonData['ABBOTSFORD-3067']['details']['suburb_name']);
-  // console.log(jsonData['ABBOTSFORD-3067']['details']);
-
-    // total cases
-    // ttlCases = ttlCases + parseFloat(att.cases);
-  });
-
-// console.log(houseData);
-
-*/
 $(document).ready(function(){
   // use jQuery to load boundaries data
   $.getJSON("../static/data/suburb-2-vic.geojson", function(data) {
@@ -211,6 +195,7 @@ $(document).ready(function(){
 
         if (isNaN(subPopuVal)) {
 
+          nanSubList.push(feature.properties['vic_loca_2']);
           layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
                                           feature.properties['vic_loca_2'] + "</h4></b>" +
                                           "• Population: " + 'Data Not Found!')
@@ -277,6 +262,8 @@ $(document).ready(function(){
       source: arSuburbs
     });
 
+    nanSubList.sort()
+    console.log(nanSubList);
 
   });
 
@@ -432,7 +419,7 @@ function parseData(parData) {
 
 // function to assign suitable color depend up export value
 function getColor(val) {
-
+/*
   return val < 0   ? ' #111a00':
           val < 10    ? '#223300':
           val < 100   ? '#334d00':
@@ -441,9 +428,9 @@ function getColor(val) {
           val < 10000 ?  '#88cc00':
           val < 20000 ?  '#b3ff1a':
           val < 30000 ?  '#ccff66':
-          val < 50000 ?  '#eeffcc':
+          val < 70000 ?  '#eeffcc':
                         ' #111a00';
-/*
+
     return val < 0   ? '#e6ffb3':
           val < 10    ? '#e6ffb3':
           val < 100   ? '#ccff66':
@@ -455,6 +442,17 @@ function getColor(val) {
           val < 50000 ? '#223300':
                         '#f7ffe6';
 */
+return  val < 100  ? '#f2ffe6': //'#eeffcc':
+          // val < 500   ? '#e6ffb3':
+          val < 1000  ? '#ccff66':
+          val < 5000  ? '#b3ff1a':
+          val < 10000 ? '#88cc00':
+          val < 20000 ? '#669900':
+          // val < 30000 ? '#446600':
+          val < 40000 ? '#558000':
+          val < 50000 ? '#334d00':
+          val < 80000 ? '#223300':
+                         '#29293d';
 }
 
 
