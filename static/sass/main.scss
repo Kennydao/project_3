@@ -140,7 +140,7 @@
 	}
 
 	a {
-		color: #0090c5;
+		color:  #376ab6;// #0090c5;
 		text-decoration: underline;
 
 		&:hover {
@@ -197,7 +197,7 @@
 
 	hr {
 		border: 0;
-		border-top: solid 1px #eee;
+		border-top: solid 0.5px #eee;
 	}
 
 	blockquote {
@@ -434,11 +434,11 @@
 		color: #fff;
 		text-decoration: none;
 		border-radius: 6px;
-		font-weight: 800;
+		font-weight: 600;
 		outline: 0;
 		border: 0;
 		cursor: pointer;
-		font-size: 1.35em;
+		font-size: 1.0em;
 		padding: 0.6em 1.5em;
 
 		&.icon:before {
@@ -452,7 +452,7 @@
 		}
 
 		&:active {
-			background: #20b0e5;
+			background: #b8b9b9;// #20b0e5;
 		}
 
 		&.alt {
@@ -472,7 +472,7 @@
 		}
 
 		&.large {
-			font-size: 2.25em;
+			font-size: 1.25em;
 			padding: 0.8em 0.9em;
 		}
 	}
@@ -1427,4 +1427,8 @@
 				text-align: left;
 			}
 
+	}
+// add on
+p.outcome {
+	text-align: justify;
 	}

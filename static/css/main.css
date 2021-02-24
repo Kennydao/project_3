@@ -90,8 +90,8 @@ input, select, textarea {
 		/* background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png"); */
-		background-color: #f7f7f7;
+		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");  #f7f7f7;*/
+		background-color: rgb(61, 61, 61);
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
 		background-size: 100% 30em, auto;
@@ -122,7 +122,8 @@ input, select, textarea {
 	}
 
 	a {
-		color: #0090c5;
+		/*  #0090c5 */
+		color:whitesmoke;
 		text-decoration: underline;
 	}
 
@@ -1511,7 +1512,7 @@ input, select, textarea {
 	}
 
 /* Forms */
-
+/*
 	form label {
 		display: block;
 		font-weight: 800;
@@ -1576,7 +1577,7 @@ input, select, textarea {
 	form ::-moz-focus-inner {
 		border: 0;
 	}
-
+*/
 /* Tables */
 
 	table {
@@ -1887,7 +1888,7 @@ input, select, textarea {
 		}
 
 /* Widgets */
-
+/*
 	.widget.thumbnails .grid {
 		margin: 0 0 3em 0;
 	}
@@ -1942,7 +1943,7 @@ input, select, textarea {
 				.widget.contact ul li a:active {
 					background: #666666;
 				}
-
+*/
 /* Wrappers */
 
 	#header-wrapper {
@@ -2828,3 +2829,109 @@ input, select, textarea {
     visibility: visible;
   }
 }
+
+/* my Style */
+body {
+	padding: 0;
+	margin: 0;
+  }
+
+  #map,
+  body,
+  html
+  {
+	width: 100%;
+	height: 100vh;
+	/* background-color: rgb(44, 43, 43); */
+
+  }
+
+  /* html {
+	font-size: 100%;
+	font-family: Georgia, serif;
+  } */
+
+  .map {
+	width: 100%;
+	height: 100vh;
+	font-family: inherit;
+	font-size: inherit;
+	/* background: transparent; */
+  }
+
+  .leaflet-tile-pane { opacity: .8; }
+
+
+  .leaflet-bar {
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-moz-user-select: none;
+	user-select: none;
+	border-radius: 2px;
+	box-shadow: 0 0 4px rgba(0,0,0,.5);
+  }
+
+  /* .divFact {
+  background-color: black;
+
+  } */
+
+  #side-bar {
+	background-color:  rgb(61, 61, 61);
+	color:#fff;
+	height: 100vh;
+  }
+
+  #divFact {
+	color: white;
+	background-color: rgb(44, 43, 43);
+	text-align: center;
+	margin-left: 1px;
+	/* height: 100vh; */
+  }
+
+
+  #divPrediction {
+	color: #fff;
+	background: #0090c5;
+	text-align: center;
+  }
+
+  .errorMsg {
+	padding: 0;
+	text-align: center;
+	background-color: red;
+  }
+
+  .info {
+	padding: 3px 8px;
+	font: 11px/13px Arial, Helvetica, sans-serif;
+	margin-left: 0px;
+	/* background: white; */
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 5px;
+  }
+  .legend {
+	margin-left: 3px;
+	line-height: 18px;
+	color: #555;
+
+  }
+  .legend i {
+	width: 42px;
+	height: 11px;
+	float: left;
+	margin-left: 5px;
+	opacity: 0.7;
+  }
+
+  .col-xs-12, .col-xs-6, .col-xs-4 {
+	padding: 1px;
+  }
+
+  #divSelection, #btnPrediHouse, #btnPopuGrowth{
+	color: #fff;
+	background:#0090c5;
+	border-radius: 5px;
+  }

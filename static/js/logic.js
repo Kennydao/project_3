@@ -29,12 +29,11 @@ map = L.map("map", {center:[-37.8136, 144.9631], zoom: 6, minZoom: 6, maxZoom: 1
 //   // ext: 'png'
 // });
 
-lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
-// lyrOSM.addTo(map);
-lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
+// lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
 // lyrOSM.addTo(map);
 
-lyrTopo = L.tileLayer.provider('OpenTopoMap');
+
+// lyrTopo = L.tileLayer.provider('OpenTopoMap');
 // lyrTopo.addTo(map);
 
 lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
@@ -151,80 +150,57 @@ $(document).ready(function(){
 
     // console.log(data);
 
-    var info = L.control();
-
-    // console.log(info);
-    // console.log(data);
-
-    info.update = function (props, name) {
-
-      cleanedName(name);
-
-      subPopuVal = suburbPopulation[name];
-       if (isNaN(subPopuVal)){
-        this._div.innerHTML = (props ? '<b>' + name + '</b>' + '<i>' + " Population Data Not Found!" +'</i>' : '<i>Hover over a suburb</i>');
-        }
-      else {
-        this._div.innerHTML = (props ? '<b>' + name + ": " + numberWithCommas(subPopuVal) + ' people'+'</b>' : '<i>Hover over a suburb</i>');
-      }
-
-    };
-
-    info.onAdd = function (map) {
-      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-      this.update();
-      return this._div;
-    };
-
-    info.addTo(map);
-
     var lyrPopulation = L.geoJson(data, { style: myStyle,
 
       onEachFeature: function (feature, layer) {
 
-        // acquiring the list of suburbs name
-
-        // feature.properties['vic_loca_2'] = toUpper(feature.properties['vic_loca_2']);
-
-        // medHousePrice = housePriceData[feature.properties.vic_loca_2];
-        // popuValue = suburbPopulation[feature.properties.vic_loca_2]
-        // subPopuVal = suburbPopulation[feature.properties.vic_loca_2];
-        // covCaseVal = covidCases[feature.properties.vic_loca_2];
-        // incomeVal = suburbIncome[feature.properties.vic_loca_2];
-
-
         if (isNaN(subPopuVal)) {
 
           nanSubList.push(feature.properties['vic_loca_2']);
-          layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
-                                          feature.properties['vic_loca_2'] + "</h4></b>" +
-                                          "• Population: " + 'Data Not Found!')
+
+          // layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
+          //                                 feature.properties['vic_loca_2'] + "</h4></b>" +
+          //                                 "• Population: " + 'Data Not Found!')
           }
 
         else {
           if (isNaN(medHousePrice)) {
-              medHousePrice = ' unavailable!';//calMedHousePrice;
+              medHousePrice = calMedHousePrice; // assign calculated median house price if it is NaN
           }
 
-          if (isNaN(incomeVal)) {
-
-            incomeVal = 'Data unavailable'; //avgIncomeVal;
-            }
+          // if (isNaN(incomeVal)) {
+          //   incomeVal = 'Data unavailable'; //avgIncomeVal;
+          //   }
 
           if (isNaN(covCaseVal)) {
             covCaseVal = 0;
           }
 
+          // use conditional case to exclude incomVal with Null value from tooltip
+          isNaN(incomeVal) ? layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
+                            feature.properties['vic_loca_2'] + "</h4></b>" +
+                            "• Population: " + numberWithCommas(subPopuVal) + '<br>' +
+                            // "• Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
+                            "• Median House Price: $" + numberWithCommas(medHousePrice) +
+                            '<br>' + "• Covid Cases: " + covCaseVal, {direction: "center"}):
+                            layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
+                            feature.properties['vic_loca_2'] + "</h4></b>" +
+                            "• Population: " + numberWithCommas(subPopuVal) + '<br>' +
+                            "• Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
+                            "• Median House Price: $" + numberWithCommas(medHousePrice) +
+                            '<br>' + "• Covid Cases: " + covCaseVal, {direction: "center"});
+
+          /*
           layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
                                           feature.properties['vic_loca_2'] + "</h4></b>" +
                                           "• Population: " + numberWithCommas(subPopuVal) + '<br>' +
                                           "• Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
-                                          "• Median House Price: $" + numberWithCommas(medHousePrice) +'<br>' +
-                                          "• Covid Cases: " + covCaseVal);
+                                          "• Median House Price: $" + numberWithCommas(medHousePrice) +
+                                          '<br>' + "• Covid Cases: " + covCaseVal, {direction: "center"});
+          */
           }
         layer
         .on('mouseover', function(e) {
-
 
           layer.setStyle({
             weight: 2,
@@ -235,13 +211,13 @@ $(document).ready(function(){
 
           // refresh suburb name
 
-          info.update(layer.feature.properties, layer.feature.properties['vic_loca_2']);
+          // info.update(layer.feature.properties, layer.feature.properties['vic_loca_2']);
 
           })
 
         .on('mouseout', function(e) {
           lyrPopulation.resetStyle(e.target); //layer geojson
-          info.update();
+          // info.update();
         })
       }
 
@@ -263,7 +239,32 @@ $(document).ready(function(){
     });
 
     nanSubList.sort()
-    console.log(nanSubList);
+
+    // console.log(nanSubList);
+
+    // Set up the legend
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function (map) {
+
+        var div = L.DomUtil.create('div', 'info legend');
+
+        var lgdInfo = [1000, 5000, 10000, 20000, 30000, 50000];
+
+        var labels = ['1K', '5K', '10K', '20K', '30K', '50K'];
+
+        div.innerHTML += "<ul>" + labels.join("&ndash;&ndash;&ndash;&ndash;&ndash;") + "</ul>";
+
+        for (var i = 0; i < lgdInfo.length; i++) {
+            // Horizontal
+            div.innerHTML += '<i style="background-color:' + getColor(lgdInfo[i]) +'" ></i>'
+
+          }
+        return div;
+      };
+
+    // Add legend to the map
+    legend.addTo(map);
 
   });
 
@@ -293,8 +294,6 @@ function myStyle(feature) {
   // console.log('bf: ', feature.properties['vic_loca_2']);
   feature.properties['vic_loca_2'] = toUpper(feature.properties['vic_loca_2']);
 
-  cleanedName(feature.properties['vic_loca_2']);
-
   // console.log('after:' ,feature.properties['vic_loca_2']);
 
   // acquire the suburb's population
@@ -302,7 +301,13 @@ function myStyle(feature) {
   covCaseVal = covidCases[feature.properties.vic_loca_2];
   incomeVal = suburbIncome[feature.properties.vic_loca_2];
   medHousePrice = housePriceData[feature.properties.vic_loca_2];
-
+  /*
+  if (isNaN(subPopuVal)) {
+    console.log('bf cleanedName: ', feature.properties['vic_loca_2'])
+    cleanedName(feature.properties['vic_loca_2']);
+    console.log('after cleanedName: ', feature.properties['vic_loca_2'], subPopuVal)
+  }
+  */
   // assigne medHousePrice in case there is no value in the dataset
   if (medHousePrice == 0) {
     medHousePrice = calMedianHousePrice;
@@ -325,28 +330,36 @@ function cleanedName(name) {
   var nameNorth = name + " North";
 
   subPopuVal = suburbPopulation[nameEast];
-
+  console.log('East:', name)
+  console.log(isNaN(subPopuVal));
   if (! isNaN(subPopuVal)) {
     name = nameEast;
     return name;
-  }
+    }
   else {
     subPopuVal = suburbPopulation[nameWest];
     if (! isNaN(subPopuVal)) {
       name = nameWest;
+      console.log('West:', name)
       return name;
     }
     else {
       subPopuVal = suburbPopulation[nameSouth];
       if (! isNaN(subPopuVal)) {
         name = nameSouth;
+        console.log('South:',name)
         return name;
       }
       else {
         subPopuVal = suburbPopulation[nameNorth];
         if (! isNaN(subPopuVal)) {
           name = nameNorth;
+          console.log('North:',name)
           return name;
+        }
+        else {
+          console.log('popu data not found!', name);
+          subPopuVal = 'Unavailable Data!'
         }
       }
     }
@@ -404,44 +417,19 @@ $("#btnPopuGrowth").click(function() {
 });
 */
 
-// function to parse data from csv file
-function parseData(parData) {
-
-  parData.cases = +parData.cases;
-  ttlCases = 0;
-
-  for (var i = 0; i < parData.length; i++) {
-    var att = parData[i];
-    covCases[att.postcode] = att.cases;
-
-  }
-}
-
-// function to assign suitable color depend up export value
+// use conditional operator (?:) to return suitable color
 function getColor(val) {
-/*
-  return val < 0   ? ' #111a00':
-          val < 10    ? '#223300':
-          val < 100   ? '#334d00':
-          val < 1000  ? '#558000':
-          val < 5000  ? '#669900':
-          val < 10000 ?  '#88cc00':
-          val < 20000 ?  '#b3ff1a':
-          val < 30000 ?  '#ccff66':
-          val < 70000 ?  '#eeffcc':
-                        ' #111a00';
+  return val < 100  ? '#e6ffb3':
+        val < 1000  ? '#ccff66':
+        val < 5000  ? '#b3ff1a':
+        val < 10000 ? '#88cc00':
+        val < 20000 ? '#669900':
+        val < 30000 ? '#558000':
+        val < 50000 ? '#334d00':
+        val < 70000 ? '#223300':
+                      '#f7ffe6';
 
-    return val < 0   ? '#e6ffb3':
-          val < 10    ? '#e6ffb3':
-          val < 100   ? '#ccff66':
-          val < 1000  ? '#b3ff1a':
-          val < 5000  ? '#88cc00':
-          val < 10000 ? '#669900':
-          val < 20000 ? '#558000':
-          val < 30000 ? '#334d00':
-          val < 50000 ? '#223300':
-                        '#f7ffe6';
-*/
+/*
 return  val < 100  ? '#f2ffe6': //'#eeffcc':
           // val < 500   ? '#e6ffb3':
           val < 1000  ? '#ccff66':
@@ -452,7 +440,8 @@ return  val < 100  ? '#f2ffe6': //'#eeffcc':
           val < 40000 ? '#558000':
           val < 50000 ? '#334d00':
           val < 80000 ? '#223300':
-                         '#29293d';
+                         '#f2ffe6'; //'#29293d';
+*/
 }
 
 

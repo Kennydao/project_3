@@ -19,8 +19,8 @@
 		<!-- Bootstrap CSS -->
 		<!-- <link rel="stylesheet" href="../static/css/bootstrap.css"> -->
 
-		<!-- Our CSS -->
-		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+		<!-- CSS -->
+		<!-- <link rel="stylesheet" type="text/css" href="../static/css/style.css"> -->
 
 		<!-- Plugins CSS  -->
 		<link rel="stylesheet" type="text/css" href="../static/plugins/jquery-ui.min.css">
@@ -28,21 +28,7 @@
 
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="../static/css/main.css" />
-		<style>
-			.box {
- 				min-height: 50px;
-  				/* padding: 5px; */
-  				/* margin: 5px; */
-  				font-weight: 800;
-  				color: #fff;
-				}
-			.col-md-3 {
-                padding:0px 0px 0px, 0px;
-				/* background: rgba(0, 0, 0, 0.05);
-				background-color: black; */
-            }
 
-}		</style>
 	</head>
 
 	<body class="is-preload homepage">
@@ -62,8 +48,8 @@
 							<li>
 								<a href="#">Visualization</a>
 								<ul>
-									<li><a href="/tab_1">Median House Price</a></li>
-                            		<li><a href="/tab_2">Property Sold</a></li>
+									<!-- <li><a href="/tab_1">Median House Price</a></li> -->
+                            		<!-- <li><a href="/tab_2">Property Sold</a></li> -->
                             		<li><a href="/tab_3">Weekly Household Income</a></li>
 									<li><a href="/tab_4">Demographic Data</a></li>
 									<li><a href="/tab_5">Employment by Industry </a></li>
@@ -96,15 +82,12 @@
 			<!-- Main -->
 			<div id="main-wrapper">
 				<!-- <div class= "container"> -->
+
 					<div class="row">
 
 						<div id="side-bar" class="col-md-3">
-							<div id = 'divBedroom' class='form-group col-xs-12' >
-								<form method='POST' action="/Prediction">
-
-									<!-- <div id="divPrediction" class="text-center col-xs-6">
-										<hr><h1>ML/Prediction</h1><hr>
-									</div> -->
+							<div id = 'divInput' class='form-group col-xs-12' >
+								<form method='POST' action="/myPrediction">
 
 									<div class='col-xs-6'>
 										<input type="text" id="txtSubHouse" name='subHouse' class="form-control" placeholder="Suburb Name">
@@ -118,11 +101,14 @@
 										<input type="text" id="txtYearHouse" name="yearHouse" class="form-control" placeholder="Year">
 									</div>
 
-									<button id="btnPopuGrowth" type = "submit" class="btn btn-primary btn-block" >Prediction</button> <!--href="/popuPrediction"-->
-									<!-- <button id="btnPrediHouse" class="btn btn-primary btn-block" href="/housePricePrediction">Housing Price</button> -->
+									<!-- btn btn-primary btn-block -->
+									<button id="btnPrediction" type = "submit" class="btn btn-primary btn-block">Prediction</button> <!--href="/myPrediction"-->
+
+									<!-- Prediction outcome -->
 									<div id="divPopuResult" class='col-xs-6'>
-										<hr><p>{{txtMessage_1}} {{subInput}} {{yearInput}} {{popuPrediction}}</p><hr>
-										<p>{{txtMessage_2}} {{housePricePred}}</p>
+
+										<hr><p class='main'>Projected Population: {{popuPrediction}}</p> <hr>
+										<p class= 'main'>Estimated House Price: {{housePricePred}}</p><hr>
 
 									</div>
 								</form>
@@ -132,6 +118,7 @@
 						<!-- map div -->
 						<div id="map" class="col-md-9"></div>
 					</div>
+
 				<!-- </div> -->
 			</div>
 		</div>

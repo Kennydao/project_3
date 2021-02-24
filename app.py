@@ -8,8 +8,6 @@ import json
 import pandas as pd
 import io
 
-
-
 housePricePred = 0.0
 X_observation = 2021
 popu_df = pd.read_csv('static/data/Vic_Subs_Popu_2001_2019.csv')
@@ -30,6 +28,7 @@ for name in col_names:
 
 # print(subNameList)
 
+# adapted from GeeksforGeeks.org
 def estimate_coef(x, y):
     # number of observations/points
     n = np.size(x)
@@ -47,6 +46,9 @@ def estimate_coef(x, y):
 
     return(b_0, b_1)
 
+# Function number with comma
+
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -55,26 +57,27 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/Prediction", methods=['GET', 'POST'])
+@app.route("/myPrediction", methods=['GET', 'POST'])
 
-def Prediction():
-    '''
-    if request.method == 'GET':
-        selYear = request.args.get('selYear')
-        print(bedRoom)
+def myPrediction():
+    #if request.method == 'GET':
+        # var1 = request.args.get('suburb')
+    #    print('Method = GET')
+
     if request.method == 'POST':
-        print(request)
-        print(request.form["subHouse"])
-        print(request.form["bedRoom"])
-        print(request.form["yearHouse"])
-        # print('Hello world')
+        # print(request.form["bedRoom"])
+        # print(request.form["yearHouse"])
+        # print(request.form["subHouse"])
+        # print(request)
+        suburbName = request.form["subHouse"]
+        X_observation = request.form["yearHouse"]
+        inputYear = int(request.form["yearHouse"])
+        inputRoom = int(request.form["bedRoom"])
+        X_observation = int(X_observation)
+        subHouse = request.form["subHouse"]
 
-    '''
-
-    suburbName = request.form["subHouse"]
-    X_observation = request.form["yearHouse"]
     # print(X_observation)
-    X_observation = int(X_observation)
+
     subArray = popu_df.loc[popu_df['Suburb'] == suburbName]
 
     if subArray.size > 0:
@@ -90,13 +93,6 @@ def Prediction():
         # y_pred = b[0] + b[1]*x
 
         y_observation = b[0] + b[1]*X_observation
-        # print("Estimated coefficients:\nb_0 = {}  \
-        #   \nb_1 = {}".format(b[0], b[1]))
-
-        # prediction house price
-        subHouse = request.form["subHouse"]
-        inputYear = int(request.form["yearHouse"])
-        inputRoom = int(request.form["bedRoom"])
 
         if subHouse in subNameList:
             # print('Found the suburb in the dataset!', subHouse)
@@ -110,6 +106,7 @@ def Prediction():
             nArray[0] = inputRoom
             nArray[1] = inputYear
             nArray[pointer+2] = 1
+
             # print(nArray[0], nArray[1])
             # print('nArray',[pointer+1]+ ' , ', nArray[pointer+1])
             nArray = np.array(nArray, ndmin=2)
@@ -120,12 +117,15 @@ def Prediction():
             # print(model)
 
             outCome = model.predict(nArray)
-            outCome = int(outCome)
-            # print(outCome)
+            outCome = f"{int(outCome):,d}"
 
-        return render_template("index.html", txtMessage_1='Estimated Population:', popuPrediction = int(y_observation), txtMessage_2 = 'Estimated House Price:', housePricePred = outCome, yearInput = X_observation, subInput = suburbName)
-        #Flask.Response(response='n', status=status, mimetype='application/json') #redirect("/") jsonify(data)
+
+            print(outCome)
+
+        return render_template("index.html", popuPrediction = f"{int(y_observation):,d}", housePricePred = outCome)
+
     else:
+
         return render_template("index.html", popuPrediction = 'Suburb not found!')
 
 
