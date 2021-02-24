@@ -138,7 +138,7 @@ def tab1():
 def tab2():
 
 
-    return render_template("tab_2.html")
+    return render_template("tab_02.html")
 
 # Weekly household income
 @app.route("/tab_3")

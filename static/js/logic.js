@@ -29,11 +29,11 @@ map = L.map("map", {center:[-37.8136, 144.9631], zoom: 6, minZoom: 6, maxZoom: 1
 //   // ext: 'png'
 // });
 
-// lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
+lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
 // lyrOSM.addTo(map);
 
 
-// lyrTopo = L.tileLayer.provider('OpenTopoMap');
+lyrTopo = L.tileLayer.provider('OpenTopoMap');
 // lyrTopo.addTo(map);
 
 lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
@@ -267,23 +267,26 @@ $(document).ready(function(){
   });
 
 
-  /*
+
   // setup layer control
   objBasemaps = {
+    "Imagery": lyrImagery,
     "Topo Map": lyrTopo,
-    "Open Street Map": lyrOSM,
-    "Imagery": lyrImagery
+    "Open Street Map": lyrOSM
+
 
   };
-
+ /*
   objOverlays ={
     "Population Distribution": geojson,
     "Covid Cases": lyrCovid
   }
   */
+ ctlLayers = L.control.layers(objBasemaps).addTo(map);
+
 });
 
-// ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
+
 
 
 // function style
