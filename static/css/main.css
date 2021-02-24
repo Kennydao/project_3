@@ -2882,20 +2882,14 @@ body {
 	height: 100vh;
   }
 
-  #divFact {
-	color: white;
-	background-color: rgb(44, 43, 43);
-	text-align: center;
-	margin-left: 1px;
-	/* height: 100vh; */
-  }
 
 
-  #divPrediction {
+
+  /* #divPrediction {
 	color: #fff;
 	background: #0090c5;
 	text-align: center;
-  }
+  } */
 
   .errorMsg {
 	padding: 0;
@@ -2934,4 +2928,16 @@ body {
 	color: #fff;
 	background:#0090c5;
 	border-radius: 5px;
+  }
+
+  #divPredResult {
+	color: #fff;
+	/* background: #0090c5; */
+	text-align: center;
+  }
+
+  p.line{
+	color: #fff;
+	text-align: center;
+	text-underline-position: below;
   }
