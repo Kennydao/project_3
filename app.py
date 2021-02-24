@@ -48,7 +48,6 @@ def estimate_coef(x, y):
 
 # Function number with comma
 
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -56,13 +55,12 @@ def index():
 
     return render_template("index.html")
 
-
 @app.route("/myPrediction", methods=['GET', 'POST'])
 
 def myPrediction():
-    #if request.method == 'GET':
-        # var1 = request.args.get('suburb')
-    #    print('Method = GET')
+    # if request.method == 'GET':
+    # var1 = request.args.get('suburb')
+    # print('Method = GET')
 
     if request.method == 'POST':
         # print(request.form["bedRoom"])
@@ -127,8 +125,6 @@ def myPrediction():
     else:
 
         return render_template("index.html", popuPrediction = 'Suburb not found!')
-
-
 
 # Median house price
 @app.route("/tab_1")

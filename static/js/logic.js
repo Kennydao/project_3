@@ -124,8 +124,6 @@ d3.csv('../static/data/Vic_House_Median_Price.csv', function(houseData) {
     var att = houseData[i];
 
     subName = att.Suburb;
-    // console.log(subName, att['Median Price']);
-
 
     housePriceData[subName] = att['Median Price'];
 
@@ -316,7 +314,7 @@ function myStyle(feature) {
   return {
         fillColor: getColor(subPopuVal),
         weight: 1,
-        color: '#c2c2d6', // light dark
+        color: '#c2c2d6',
         dashArray: '2',
         fillOpacity: 0.5
       };
@@ -387,35 +385,6 @@ function numberWithCommas(x) {
   }
 }
 
-
-/*
-$("#btnPrediHouse").click(function() {
-
-  alert('Housing Price Prediction');
-
-  selSuburb = $("#txtSubHouse").val();
-  selYear = $("#txtYearHouse").val();
-  selBedroom = $("#txtBedroom").val();
-
-  console.log(selSuburb, selBedroom, selYear);
-
-
-});
-
-$("#btnPopuGrowth").click(function() {
-
-
-  selSuburb = $("#txtSubHouse").val();
-  selYear = $("#txtYearHouse").val();
-  selBedroom = $("#txtBedroom").val();
-  console.log(selSuburb, selBedroom, selYear);
-  $
-
-  //  d3.select("divPopuResult").selectAll("<p>")
-  //   .append("<p>")
-  //   .html(`{popuPrediction}`)
-});
-*/
 
 // use conditional operator (?:) to return suitable color
 function getColor(val) {
