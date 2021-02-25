@@ -124,7 +124,7 @@ def myPrediction():
 
     else:
 
-        return render_template("index.html", popuPrediction = 'Suburb not found!')
+        return render_template("index.html", popuPrediction = 'Data Not Found!')
 
 # Median house price
 @app.route("/tab_1")

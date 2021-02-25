@@ -178,13 +178,13 @@ $(document).ready(function(){
           isNaN(incomeVal) ? layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
                             feature.properties['vic_loca_2'] + "</h4></b>" +
                             "• Population: " + numberWithCommas(subPopuVal) + '<br>' +
-                            // "• Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
+                            // "• Weekly Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
                             "• Median House Price: $" + numberWithCommas(medHousePrice) +
                             '<br>' + "• Covid Cases: " + covCaseVal, {direction: "center"}):
                             layer.bindTooltip("<h4 style = 'text-align: center; background-color: #ffcc66'><b>" +
                             feature.properties['vic_loca_2'] + "</h4></b>" +
                             "• Population: " + numberWithCommas(subPopuVal) + '<br>' +
-                            "• Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
+                            "• Weekly Median Income: $" + numberWithCommas(incomeVal) +'<br>' +
                             "• Median House Price: $" + numberWithCommas(medHousePrice) +
                             '<br>' + "• Covid Cases: " + covCaseVal, {direction: "center"});
 
